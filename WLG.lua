@@ -1,47 +1,47 @@
 shieldState = 0
-function drink() --³ÔºÈ
-    prints("a:³ÔºÈ")
+function drink() --åƒå–
+    prints("a:åƒå–")
     local drinkBag, drinkSlot = getBelongBagAndSlotByID(30703)
     local breadBag, breadSlot = getBelongBagAndSlotByID(22895)
     if drinkSlot == 0 or breadSlot == 0 then
         standBy()
-        castSpellA("ÔìÊ³Êõ(µÈ¼¶ 7)")
+        castSpellA("é€ é£Ÿæœ¯(ç­‰çº§ 7)")
         sleep(3500)
-        castSpellA("ÔìË®Êõ(µÈ¼¶ 8)")
+        castSpellA("é€ æ°´æœ¯(ç­‰çº§ 8)")
         sleep(3500)
     end
     local je1Bag, je1Slot = getBelongBagAndSlotByID(22044)
     if je1Slot == 0 then
         standBy()
-        castSpellA("ÖÆÔìÄ§·¨ÓñÊ¯")
+        castSpellA("åˆ¶é€ é­”æ³•ç‰çŸ³")
         sleep(3500)
     end
     je1Bag, je1Slot = getBelongBagAndSlotByID(8008)
     if je1Slot == 0 then
         standBy()
-        castSpellA("ÖÆÔìÄ§·¨ºì±¦Ê¯")
+        castSpellA("åˆ¶é€ é­”æ³•çº¢å®çŸ³")
         sleep(3500)
     end
     je1Bag, je1Slot = getBelongBagAndSlotByID(8007)
     if je1Slot == 0 then
         standBy()
-        castSpellA("ÖÆÔìÄ§·¨»ÆË®¾§")
+        castSpellA("åˆ¶é€ é­”æ³•é»„æ°´æ™¶")
         sleep(3500)
     end
     je1Bag, je1Slot = getBelongBagAndSlotByID(5513)
     if je1Slot == 0 then
         standBy()
-        castSpellA("ÖÆÔìÄ§·¨ôä´ä")
+        castSpellA("åˆ¶é€ é­”æ³•ç¿¡ç¿ ")
         sleep(3500)
     end
     if getRoleCurrentHP() < 95 and getRoleCurrentMP() < 95 and getRoleCurrentHP() >= 0 and getRoleCurrentMP() >= 0 then
-        useItem("Ä§·¨Èâ¹ğÃæ°ü")
-        useItem("Ä§·¨É½ÈªË®")
+        useItem("é­”æ³•è‚‰æ¡‚é¢åŒ…")
+        useItem("é­”æ³•å±±æ³‰æ°´")
     end
     while getRoleCurrentHP() ~= -1 and getRoleflag1() ~= 0x04 do
         if IsBuffExist(29073) == 0 or IsBuffExist(34291) == 0 then
-            useItem("Ä§·¨Èâ¹ğÃæ°ü")
-            useItem("Ä§·¨É½ÈªË®")
+            useItem("é­”æ³•è‚‰æ¡‚é¢åŒ…")
+            useItem("é­”æ³•å±±æ³‰æ°´")
         end
         if getRoleCurrentHP() >= 95 and getRoleCurrentMP() >= 95 then
             break
@@ -52,73 +52,73 @@ function drink() --³ÔºÈ
 end
 
 function mail()
-    prints("a:ÓÊ¼Ä")
-    for i=1,4,1 do --Ñ­»·½«ËùÓĞ¸±±³°üµÄÎïÆ·¶¼·ÅÈë,Ö±µ½ÌîÂúÓÊ¼ş
-        bagNum = getBagSlotNum(i) --»ñµÃ±³°üµÄ´óĞ¡
-        unUsedSLot = getUnusedBagSlotNum(i)--»ñµÃËùÓĞ±³°üÊ£ÓàµÄ¿Õ¸ñ×Ó
-        if bagNum-unUsedSLot > 0 then --Èç¹û±³°üÖĞÓĞ¶«Î÷
-            contactClosetMailObjec()--ÓëÓÊÏä»¥¶¯(´ò¿ªÓÊÏä)
-            clickSendMailFrame()--´ò¿ª·¢ËÍÒ³Ãæ
-            setMailTargetName()--ÌîĞ´Ãû×Ö£¬Ãû×ÖÔÚ½Å±¾½çÃæÌîĞ´
-            for k = 1,bagNum,1 do --³¢ÊÔ½«±³°üÖĞµÄÃ¿¸ö¸ñ×Ó¶¼·ÅÈëÓÊÏä£¬Ã»ÓĞ¾Í²»·Å£¬ÓĞ¾Í»á·Å½øÈ¥
-                putMailItem(i,k) --·ÅÈë
+    prints("a:é‚®å¯„")
+    for i=1,4,1 do --å¾ªç¯å°†æ‰€æœ‰å‰¯èƒŒåŒ…çš„ç‰©å“éƒ½æ”¾å…¥,ç›´åˆ°å¡«æ»¡é‚®ä»¶
+        bagNum = getBagSlotNum(i) --è·å¾—èƒŒåŒ…çš„å¤§å°
+        unUsedSLot = getUnusedBagSlotNum(i)--è·å¾—æ‰€æœ‰èƒŒåŒ…å‰©ä½™çš„ç©ºæ ¼å­
+        if bagNum-unUsedSLot > 0 then --å¦‚æœèƒŒåŒ…ä¸­æœ‰ä¸œè¥¿
+            contactClosetMailObjec()--ä¸é‚®ç®±äº’åŠ¨(æ‰“å¼€é‚®ç®±)
+            clickSendMailFrame()--æ‰“å¼€å‘é€é¡µé¢
+            setMailTargetName()--å¡«å†™åå­—ï¼Œåå­—åœ¨è„šæœ¬ç•Œé¢å¡«å†™
+            for k = 1,bagNum,1 do --å°è¯•å°†èƒŒåŒ…ä¸­çš„æ¯ä¸ªæ ¼å­éƒ½æ”¾å…¥é‚®ç®±ï¼Œæ²¡æœ‰å°±ä¸æ”¾ï¼Œæœ‰å°±ä¼šæ”¾è¿›å»
+                putMailItem(i,k) --æ”¾å…¥
                 sleep(10)
             end
-            sendMail()--·¢ËÍÓÊ¼ş
+            sendMail()--å‘é€é‚®ä»¶
             useLua("/click MailFrameCloseButton")
-            sleep(500) -- ÂÔÎ¢ÑÓ³Ù£¬·ÀÖ¹·¢ÓÊ¼ş¿¨×¡
+            sleep(500) -- ç•¥å¾®å»¶è¿Ÿï¼Œé˜²æ­¢å‘é‚®ä»¶å¡ä½
         end
         if i == 3 then
-            contactClosetMailObjec()--ÓëÓÊÏä»¥¶¯
-            clickSendMailFrame()--´ò¿ª·¢ËÍÒ³Ãæ
-            putMailMoney(3)--·ÅÈë1G
-            setMailTargetName1()--ÌîĞ´Ãû×Ö£¬Ãû×ÖÔÚ½Å±¾½çÃæÌîĞ´
-            sendMail()--·¢ËÍÓÊ¼ş
+            contactClosetMailObjec()--ä¸é‚®ç®±äº’åŠ¨
+            clickSendMailFrame()--æ‰“å¼€å‘é€é¡µé¢
+            putMailMoney(3)--æ”¾å…¥1G
+            setMailTargetName1()--å¡«å†™åå­—ï¼Œåå­—åœ¨è„šæœ¬ç•Œé¢å¡«å†™
+            sendMail()--å‘é€é‚®ä»¶
             useLua("/click MailFrameCloseButton")
-            sleep(500) -- ÂÔÎ¢ÑÓ³Ù£¬·ÀÖ¹·¢ÓÊ¼ş¿¨×¡
+            sleep(500) -- ç•¥å¾®å»¶è¿Ÿï¼Œé˜²æ­¢å‘é‚®ä»¶å¡ä½
         end
     end
-    contactClosetMailObjec()--ÓëÓÊÏä»¥¶¯
-    clickSendMailFrame()--´ò¿ª·¢ËÍÒ³Ãæ
-    putMailMoney(100)--·ÅÈë1G
-    setMailTargetName()--ÌîĞ´Ãû×Ö£¬Ãû×ÖÔÚ½Å±¾½çÃæÌîĞ´
-    sendMail()--·¢ËÍÓÊ¼ş
+    contactClosetMailObjec()--ä¸é‚®ç®±äº’åŠ¨
+    clickSendMailFrame()--æ‰“å¼€å‘é€é¡µé¢
+    putMailMoney(100)--æ”¾å…¥1G
+    setMailTargetName()--å¡«å†™åå­—ï¼Œåå­—åœ¨è„šæœ¬ç•Œé¢å¡«å†™
+    sendMail()--å‘é€é‚®ä»¶
     useLua("/click MailFrameCloseButton")
-    sleep(500) -- ÂÔÎ¢ÑÓ³Ù£¬·ÀÖ¹·¢ÓÊ¼ş¿¨×¡
+    sleep(500) -- ç•¥å¾®å»¶è¿Ÿï¼Œé˜²æ­¢å‘é‚®ä»¶å¡ä½
 end
 
-function silence(name,x,y) --·´ÖÆ
-    prints("a:·´ÖÆ")
+function silence(name,x,y) --ååˆ¶
+    prints("a:ååˆ¶")
     local ID1,ID2 = getClosetTargetIDToAPositionFilterName(name,x,y,3,8)
     --prints(name)
     chooseTarget(ID1,ID2)
-    castSpellA("·¨Êõ·´ÖÆ")
+    castSpellA("æ³•æœ¯ååˆ¶")
 end
 
-function watchLobster() --¹Û²ìÁúÏºÈË×ßÎ»
-    prints("a:¹Û²ìÁúÏºÈË×ßÎ»")
+function watchLobster() --è§‚å¯Ÿé¾™è™¾äººèµ°ä½
+    prints("a:è§‚å¯Ÿé¾™è™¾äººèµ°ä½")
     local ID1,ID2,ID3,ID4,n,distance = 0,0,0,0,0,0
     local x,y,z,x1,y1,z1 = 0,0,0,0,0,0
 
     while getRoleCurrentMP() ~= -1 and getRoleflag1() ~= 0x04  do
      
-        ID1,ID2 = getClosetTargetIDFilterName("´óĞÍÄàÕÓÁúÏºÈË",3,8)
+        ID1,ID2 = getClosetTargetIDFilterName("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",3,8)
         x,y,z = getTargetPositionByID(ID1,ID2,3)
         sleep(300)
         n = n + 1
         if n >= 500 then
-            prints("³¤Ê±¼äÎŞ·¨¼ì²âµ½ÁúÏºÈË")
+            prints("é•¿æ—¶é—´æ— æ³•æ£€æµ‹åˆ°é¾™è™¾äºº")
             moveB(120.223,-138.426,-0.821922)
-            prints("a:³¤Ê±¼äÎŞ·¨¼ì²âµ½ÁúÏºÈË£¬³ö±¾")
+            prints("a:é•¿æ—¶é—´æ— æ³•æ£€æµ‹åˆ°é¾™è™¾äººï¼Œå‡ºæœ¬")
             waitForLoadingPosition(120.223,-138.426,-0.821922)
-            useLua("/run ResetInstances()") --ÖØÖÃ
+            useLua("/run ResetInstances()") --é‡ç½®
             sleep(1000)
             moveB(743.192,7014.06,-72.7946)
-            prints("a:³¤Ê±¼äÎŞ·¨¼ì²âµ½ÁúÏºÈË£¬ÔÙ½ø±¾")
+            prints("a:é•¿æ—¶é—´æ— æ³•æ£€æµ‹åˆ°é¾™è™¾äººï¼Œå†è¿›æœ¬")
             waitForLoadingPosition(743.192,7014.06,-72.7946)
             n = 0
         end
-        ID3,ID4 = getClosetTargetIDFilterName("´óĞÍÄàÕÓÁúÏºÈË",3,8)
+        ID3,ID4 = getClosetTargetIDFilterName("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",3,8)
         
         x1,y1,z1 = getTargetPositionByID(ID3,ID4,3)
         distance = getDistanceBetween(x1,y1,57.4392,-101.923)
@@ -133,153 +133,153 @@ function watchLobster() --¹Û²ìÁúÏºÈË×ßÎ»
     end
 end
 
-function stormLobster1() --±©·çÑ©ÁúÏºÈË1
-    prints("a:±©·çÑ©ÁúÏºÈË1")
+function stormLobster1() --æš´é£é›ªé¾™è™¾äºº1
+    prints("a:æš´é£é›ªé¾™è™¾äºº1")
     local ID1,ID2,distance1,distance2 = 0,0,0,0
     local x,y,z = 0,0,0
     while getRoleCurrentMP() ~= -1 and getRoleflag1() ~= 0x04  do
         sleep(100)
-        ID1,ID2 = getClosetTargetIDFilterName("´óĞÍÄàÕÓÁúÏºÈË",3,8)
+        ID1,ID2 = getClosetTargetIDFilterName("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",3,8)
         x,y,z = getTargetPositionByID(ID1,ID2,3)
         distance1 = getDistanceBetween(x,y,68.309, -99.5403)
         distance2 = getTargetAndRoleDistanceByID(ID1,ID2,3)
         if distance1 <= 70 and distance1 >= 0 then
             if distance2 <= 32 and distance2 >= 0 then
                 chooseTarget(ID1,ID2)
-                castSpellA("·¨Êõ·´ÖÆ")
-                ID1,ID2 = getClosetTargetIDFilterName("´óĞÍÄàÕÓÁúÏºÈË",3,8)
+                castSpellA("æ³•æœ¯ååˆ¶")
+                ID1,ID2 = getClosetTargetIDFilterName("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",3,8)
                 x,y,z = getTargetPositionByID(ID1,ID2,3)
-                castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                 sleep(5)
                 castSpellPosition(x,y,z)
                 sleep(1500)
                 return 0
             end
         else
-            return 0 -- »òĞí¿ÉÒÔÉ¾µô
+            return 0 -- æˆ–è®¸å¯ä»¥åˆ æ‰
         end
     end
 end
 
-function stormLobster2() --±©·çÑ©ÁúÏºÈË2
-    prints("a:±©·çÑ©ÁúÏºÈË2")
-    local ID1,ID2 = getClosetTargetIDFilterName("´óĞÍÄàÕÓÁúÏºÈË",3,8)
+function stormLobster2() --æš´é£é›ªé¾™è™¾äºº2
+    prints("a:æš´é£é›ªé¾™è™¾äºº2")
+    local ID1,ID2 = getClosetTargetIDFilterName("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",3,8)
     local x,y,z = getTargetPositionByID(ID1,ID2,3)
     local distance = getDistanceBetween(x,y,9.88542, -24.4741)
     if distance <= 50 and distance >= 0 then
         local distance2 = getTargetAndRoleDistanceByID(ID1,ID2,3)
         if distance2 <= 35 and distance2 >= 12 then
-            castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+            castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
             sleep(5)
             castSpellPosition(x,y,z)
             sleep(1200)
             chooseTarget(ID1,ID2)
-            castSpellA("±ùÇ¹Êõ(µÈ¼¶ 1)")
+            castSpellA("å†°æªæœ¯(ç­‰çº§ 1)")
         elseif distance2 <= 4 and distance2 >= 0 then
-            castSpellB("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
+            castSpellB("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
         end
     else
         return 0
     end
 end
 
-function attackTechnicianNotUnderBridge()--À­·ÇÇÅÏÂÑ²ÂßÅÌÑÀ¼¼Ê¦
-    prints("a:À­·ÇÇÅÏÂÑ²ÂßÅÌÑÀ¼¼Ê¦")
-    local ID1,ID2 = getClosetTargetIDFilterName("ÅÌÑÀ¼¼Ê¦",3,8)
+function attackTechnicianNotUnderBridge()--æ‹‰éæ¡¥ä¸‹å·¡é€»ç›˜ç‰™æŠ€å¸ˆ
+    prints("a:æ‹‰éæ¡¥ä¸‹å·¡é€»ç›˜ç‰™æŠ€å¸ˆ")
+    local ID1,ID2 = getClosetTargetIDFilterName("ç›˜ç‰™æŠ€å¸ˆ",3,8)
     local x,y,z = getTargetPositionByID(ID1,ID2,3)
     local distance1 = getDistanceBetween(x,y,77.796, -356.878)
     local distance2 = getTargetAndRoleDistanceByID(ID1,ID2,3)
     if distance1 > 8 and distance2 <= 35 and distance2 >= 0 then
         chooseTarget(ID1,ID2)
-        castSpellA("·¨Êõ·´ÖÆ")
+        castSpellA("æ³•æœ¯ååˆ¶")
     else
         return 0
     end
 end
 
-function attackTechnician()--À­Ñ²ÂßÅÌÑÀ¼¼Ê¦
-    prints("a:À­Ñ²ÂßÅÌÑÀ¼¼Ê¦")
-    local ID1,ID2 = getClosetTargetIDFilterName("ÅÌÑÀ¼¼Ê¦",3,8)
+function attackTechnician()--æ‹‰å·¡é€»ç›˜ç‰™æŠ€å¸ˆ
+    prints("a:æ‹‰å·¡é€»ç›˜ç‰™æŠ€å¸ˆ")
+    local ID1,ID2 = getClosetTargetIDFilterName("ç›˜ç‰™æŠ€å¸ˆ",3,8)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     if distance <= 35 and distance >= 0 then
         chooseTarget(ID1,ID2)
-        castSpellA("·¨Êõ·´ÖÆ")
+        castSpellA("æ³•æœ¯ååˆ¶")
     else
         return 0
     end
 end
 
-function iceBlock() -- º®±ùÆÁÕÏ
-    prints("a:º®±ùÆÁÕÏ")
+function iceBlock() -- å¯’å†°å±éšœ
+    prints("a:å¯’å†°å±éšœ")
     moveB(71.1643,-338.1,6.0474)
     sleep(50)
-    useLua("/cancelAura ±ù¼×Êõ(µÈ¼¶ 5)")
+    useLua("/cancelAura å†°ç”²æœ¯(ç­‰çº§ 5)")
     local ID1,ID2,distance,hp = 0,0,0,0
     while getRoleCurrentMP() ~= -1 and getRoleflag1() == 0x08 do
         sleep(100)
-        ID1,ID2 = getClosetTargetIDInBattleFilterName("ÅÌÑÀÎÀÊ¿",3,8)
+        ID1,ID2 = getClosetTargetIDInBattleFilterName("ç›˜ç‰™å«å£«",3,8)
         distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
         hp = getRoleCurrentHP()
         if distance <= 15 and distance >= 0 then
-            castSpellA("º®±ùÆÁÕÏ")
+            castSpellA("å¯’å†°å±éšœ")
             return 0
         end
         if hp <= 45 and hp >= 0 then
-            castSpellA("º®±ùÆÁÕÏ")
+            castSpellA("å¯’å†°å±éšœ")
             return 0
         end
     end
 end
 
-function patrolBraveStop() --Ñ²ÂßÓÂÊ¿±ù»·ÅĞ¶Ï
-    prints("a:Ñ²ÂßÓÂÊ¿±ù»·ÅĞ¶Ï")
-    local ID1,ID2 = getClosetTargetIDFilterName("ÅÌÑÀÓÂÊ¿",3,8)
+function patrolBraveStop() --å·¡é€»å‹‡å£«å†°ç¯åˆ¤æ–­
+    prints("a:å·¡é€»å‹‡å£«å†°ç¯åˆ¤æ–­")
+    local ID1,ID2 = getClosetTargetIDFilterName("ç›˜ç‰™å‹‡å£«",3,8)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     if distance <= 13 and distance >= 0 then
-        castSpellB("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
+        castSpellB("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
     end
 end
 
-function patrolBraveSlience() --Ñ²ÂßÓÂÊ¿·´ÖÆÅĞ¶Ï
-    prints("a:Ñ²ÂßÓÂÊ¿·´ÖÆÅĞ¶Ï")
-    local ID1,ID2 = getClosetTargetIDFilterName("ÅÌÑÀÓÂÊ¿",3,8)
+function patrolBraveSlience() --å·¡é€»å‹‡å£«ååˆ¶åˆ¤æ–­
+    prints("a:å·¡é€»å‹‡å£«ååˆ¶åˆ¤æ–­")
+    local ID1,ID2 = getClosetTargetIDFilterName("ç›˜ç‰™å‹‡å£«",3,8)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     level = getRoleLevel()
     if distance <= 35 and level == 70 and distance >= 0 then
         chooseTarget(ID1,ID2)
-        castSpellA("·¨Êõ·´ÖÆ")
+        castSpellA("æ³•æœ¯ååˆ¶")
     end
 end
 
-function summonStopMinion1(x,y,z)--Ë®ÔªËØ¶³×¡¹Ö1
-    prints("a:Ë®ÔªËØ¶³×¡¹Ö1")
-    castSpellA("ÕÙ»½Ë®ÔªËØ")
+function summonStopMinion1(x,y,z)--æ°´å…ƒç´ å†»ä½æ€ª1
+    prints("a:æ°´å…ƒç´ å†»ä½æ€ª1")
+    castSpellA("å¬å”¤æ°´å…ƒç´ ")
     sleep(5)
-    castSpellB("¼±ËÙÀäÈ´")
+    castSpellB("æ€¥é€Ÿå†·å´")
     sleep(5)
-    castSpellA("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
+    castSpellA("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
     sleep(5)
-    castSpellB("±ù¶³Êõ")
+    castSpellB("å†°å†»æœ¯")
     sleep(5)
     castSpellPosition(x,y,z)
     sleep(5)
     useLua("/run PetDismiss()")  
 end
 
-function summonStopMinion2()--Ë®ÔªËØ¶³×¡¹Ö2
-    prints("a:Ë®ÔªËØ¶³×¡¹Ö2")
-    castSpellA("ÕÙ»½Ë®ÔªËØ")
+function summonStopMinion2()--æ°´å…ƒç´ å†»ä½æ€ª2
+    prints("a:æ°´å…ƒç´ å†»ä½æ€ª2")
+    castSpellA("å¬å”¤æ°´å…ƒç´ ")
     sleep(600)
-    castSpellB("±ù¶³Êõ")
+    castSpellB("å†°å†»æœ¯")
     sleep(20)
     --castSpellPosition(42.5877,-315.003,3.03932)
     castSpellPosition(35.2655,-312.797,3.03607)
     sleep(5)
-    castSpellA("ÉÁÏÖÊõ")
+    castSpellA("é—ªç°æœ¯")
 end
 
-function firstLevelStormGathered(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï
-    prints("a:Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï")
+function firstLevelStormGathered(x,y,z) --ä¸€çº§æš´é£é›ªèšæ€ªåˆ¤æ–­
+    prints("a:ä¸€çº§æš´é£é›ªèšæ€ªåˆ¤æ–­")
     local ID1,ID2 = getClosetTargetIDInBattle(3)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     local spellID,hp = 0,0
@@ -288,11 +288,11 @@ function firstLevelStormGathered(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï
         return 0
     else
        if IsBuffExist(12536) == 1 then
-            castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+            castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
             sleep(5)
             castSpellPosition(x,y,z)
        else
-            castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+            castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
             sleep(5)
             castSpellPosition(x,y,z)
        end
@@ -301,11 +301,11 @@ function firstLevelStormGathered(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï
            spellID = getRoleCurrentSpellID()
            if spellID ~= 0xCB and spellID ~= 0xCD and i >= 5 and i<= 15 and spellID ~= 0x0a then
                if IsBuffExist(12536) == 1 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                else
-                    castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                end
@@ -321,8 +321,8 @@ function firstLevelStormGathered(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï
     end
 end
 
-function firstLevelStormGathered1(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï1
-    prints("a:Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï1")
+function firstLevelStormGathered1(x,y,z) --ä¸€çº§æš´é£é›ªèšæ€ªåˆ¤æ–­1
+    prints("a:ä¸€çº§æš´é£é›ªèšæ€ªåˆ¤æ–­1")
     local ID1,ID2 = getClosetTargetIDInBattle(3)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     local spellID,hp = 0,0
@@ -331,11 +331,11 @@ function firstLevelStormGathered1(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï1
         return 0
     else
        if IsBuffExist(12536) == 1 then
-            castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+            castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
             sleep(5)
             castSpellPosition(x,y,z)
        else
-            castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+            castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
             sleep(5)
             castSpellPosition(x,y,z)
        end
@@ -344,11 +344,11 @@ function firstLevelStormGathered1(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï1
            spellID = getRoleCurrentSpellID()
            if spellID ~= 0xCB and spellID ~= 0xCD  and i >= 5 and i<= 15 and spellID ~= 0x0a then
                if IsBuffExist(12536) == 1 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                else
-                    castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                end
@@ -364,8 +364,8 @@ function firstLevelStormGathered1(x,y,z) --Ò»¼¶±©·çÑ©¾Û¹ÖÅĞ¶Ï1
     end
 end
 
-function checkDistanceBetweenMinion1() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë
-    prints("a:¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë")
+function checkDistanceBetweenMinion1() --æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°è¶³å¤Ÿçš„è·ç¦»
+    prints("a:æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°è¶³å¤Ÿçš„è·ç¦»")
     local ID1,ID2 = getHighestHPTargetIDInBattle(3)
     local targetHP = getTargetHPByID(ID1,ID2,3)
     local hp = getRoleCurrentHP()
@@ -373,37 +373,37 @@ function checkDistanceBetweenMinion1() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë
     local x,y,z,n = 0,0,0,0
     --local name,chat = getChatInfoByType(7)
     --if name ~= "" and name ~= 0 and name ~= -1 then
-      --  useLua("/reply [´ó½Å×Ô¶¯»Ø¸´]ÎÒ²»ÊÇ»á³¤,ÎÒÏÈÑûÇëÄã½øÈë¹«»á,ÏÈ½ø»á,»á³¤½ĞÅ®È¨»òÕßÈ«ÄÜ¹Ú¾ü£¬»ámÄã£¬»òÕßÄãmËı")
-     --   useLua("/tell Å®È¨ ".. name.. "  ÉêÇë¼ÓÈë¹«»á")
-    --    useLua("/tell È«ÄÜ¹Ú¾ü ".. name.. "  ÉêÇë¼ÓÈë¹«»á")
+      --  useLua("/reply [å¤§è„šè‡ªåŠ¨å›å¤]æˆ‘ä¸æ˜¯ä¼šé•¿,æˆ‘å…ˆé‚€è¯·ä½ è¿›å…¥å…¬ä¼š,å…ˆè¿›ä¼š,ä¼šé•¿å«å¥³æƒæˆ–è€…å…¨èƒ½å† å†›ï¼Œä¼šmä½ ï¼Œæˆ–è€…ä½ må¥¹")
+     --   useLua("/tell å¥³æƒ ".. name.. "  ç”³è¯·åŠ å…¥å…¬ä¼š")
+    --    useLua("/tell å…¨èƒ½å† å†› ".. name.. "  ç”³è¯·åŠ å…¥å…¬ä¼š")
    --     useLua("/guildinvite "..name)
   --  end
     if hp < 70 and hp > 0 then
-        useItem("ÁéÎÆ²¼±Á´ø")
+        useItem("çµçº¹å¸ƒç»·å¸¦")
         sleep(2000)
     end
     local coolDown = getSpellCoolDown(12051)
     local mp = getRoleCurrentMP()
     if coolDown == 0 and mp < 43 and mp > 0 and targetHP >= 35 then
-        useItem("·¨Á¦¸ÕÓñ")
-        useItem("·¨Á¦ºì±¦Ê¯")
-        useItem("·¨Á¦»ÆË®¾§")
-        useItem("·¨Á¦ôä´ä")
+        useItem("æ³•åŠ›åˆšç‰")
+        useItem("æ³•åŠ›çº¢å®çŸ³")
+        useItem("æ³•åŠ›é»„æ°´æ™¶")
+        useItem("æ³•åŠ›ç¿¡ç¿ ")
     end
     if mp < 35 and mp > 0 and targetHP >= 35 then
-        --prints("»½ĞÑ1")
-        castSpellA("»½ĞÑ")
+        --prints("å”¤é†’1")
+        castSpellA("å”¤é†’")
     end
     if targetHP < 35 and mp < 57 and targetHP >= 0 and mp > 0 then
-        --prints("»½ĞÑ2")
-        useItem("·¨Á¦¸ÕÓñ")
-        useItem("·¨Á¦ºì±¦Ê¯")
-        useItem("·¨Á¦»ÆË®¾§")
-        useItem("·¨Á¦ôä´ä")
+        --prints("å”¤é†’2")
+        useItem("æ³•åŠ›åˆšç‰")
+        useItem("æ³•åŠ›çº¢å®çŸ³")
+        useItem("æ³•åŠ›é»„æ°´æ™¶")
+        useItem("æ³•åŠ›ç¿¡ç¿ ")
         sleep(100)
-        castSpellA("»½ĞÑ")
+        castSpellA("å”¤é†’")
     end
-    ID1,ID2 = getClosetTargetIDInBattleFilterName("±³ÅÑÕßÃÅÅ¬",3,8)
+    ID1,ID2 = getClosetTargetIDInBattleFilterName("èƒŒå›è€…é—¨åŠª",3,8)
     if ID1 ~= 0 and ID1 ~= -1 then
         local flag2 = getTargetFlag2ByID(ID1,ID2,3)
         if flag2 == 0x08 then
@@ -416,44 +416,44 @@ function checkDistanceBetweenMinion1() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë
         if  flag1 == 0x00 and flag1 ~= 0x08 then 
             break
         end
-        ID1,ID2 = getClosetTargetIDInBattleFilterName("ÅÌÑÀ¼¼Ê¦",3,8)
+        ID1,ID2 = getClosetTargetIDInBattleFilterName("ç›˜ç‰™æŠ€å¸ˆ",3,8)
         distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
         if distance <= 30 and distance > 0 then
             chooseTarget(ID1,ID2)
-            castSpellA("·¨Êõ·´ÖÆ")
+            castSpellA("æ³•æœ¯ååˆ¶")
         end
         hp = getRoleCurrentHP()
         if hp <= 14 then
-            useItem("ÌØĞ§ÖÎÁÆÒ©Ë®")
-            castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+            useItem("ç‰¹æ•ˆæ²»ç–—è¯æ°´")
+            castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
         end
         ID1,ID2 = getClosetTargetIDToAPositionInBattle(49.5638, -414.071,3)
         distance =  getTargetAndPositionDistanceByID(ID1,ID2,49.5638, -414.071,3)
         x,y,z = getTargetPositionByID(ID1,ID2,3)
-        if distance >= 0 then --¾àÀëÅĞ¶Ï
+        if distance >= 0 then --è·ç¦»åˆ¤æ–­
             distance1 = getDistanceBetween(x,y,-15.7392, -392.649)
             ID1,ID2 = getHighestHPTargetIDInBattle(3)
             targetHP = getTargetHPByID(ID1,ID2,3)
             if targetHP >= 30 then
-                if distance1 <= 18 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 18 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 30 and targetHP >= 20  then
-                if distance1 <= 32 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 32 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 20 and targetHP >= 10 then
-                if distance1 <= 42 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 42 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 10 and targetHP >= 0 then
-                if distance1 <= 47 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 47 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             end
         end
         if n >= 60 then
-            ID1,ID2 = getClosetTargetIDInBattle(3) --ÅĞ¶ÏÊÇ·ñÔÚÌ¨×ÓÉÏĞĞ×ß
+            ID1,ID2 = getClosetTargetIDInBattle(3) --åˆ¤æ–­æ˜¯å¦åœ¨å°å­ä¸Šè¡Œèµ°
             x,y,z = getTargetPositionByID(ID1,ID2,3)
             distance = getDistanceBetween(x,y,43.6467, -344.865)
             distance1 = getDistanceBetween(x,y,55.39, -346.972)
@@ -469,82 +469,87 @@ function checkDistanceBetweenMinion1() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë
     end
 end
 
-function checkDistanceBetweenMinion2() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë2
-    prints("a:¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë2")
+function checkDistanceBetweenMinion2() --æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°è¶³å¤Ÿçš„è·ç¦»2
+    prints("a:æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°è¶³å¤Ÿçš„è·ç¦»2")
     local ID1,ID2 = getHighestHPTargetIDInBattle(3)
     local targetHP = getTargetHPByID(ID1,ID2,3)
     local hp = getRoleCurrentHP()
     local distance,distance1,distance2 = 0,0,0
     local x,y,z = 0,0,0
     if hp < 70 and hp > 0 then
-        useItem("ÁéÎÆ²¼±Á´ø")
+        useItem("çµçº¹å¸ƒç»·å¸¦")
         sleep(2000)
     end
     local coolDown = getSpellCoolDown(12051)
     local mp = getRoleCurrentMP()
     if coolDown == 0 and mp < 43 and mp > 0 and targetHP >= 35 then
-        useItem("·¨Á¦¸ÕÓñ")
-        useItem("·¨Á¦ºì±¦Ê¯")
-        useItem("·¨Á¦»ÆË®¾§")
-        useItem("·¨Á¦ôä´ä")
+        useItem("æ³•åŠ›åˆšç‰")
+        useItem("æ³•åŠ›çº¢å®çŸ³")
+        useItem("æ³•åŠ›é»„æ°´æ™¶")
+        useItem("æ³•åŠ›ç¿¡ç¿ ")
     end
     if mp < 43 and mp > 0 and targetHP >= 35 then
-        castSpellA("»½ĞÑ")
+        castSpellA("å”¤é†’")
     end
     if targetHP < 35 and mp < 57 and targetHP >= 0 and mp > 0 then
-        useItem("·¨Á¦¸ÕÓñ")
-        useItem("·¨Á¦ºì±¦Ê¯")
-        useItem("·¨Á¦»ÆË®¾§")
-        useItem("·¨Á¦ôä´ä")
+        useItem("æ³•åŠ›åˆšç‰")
+        useItem("æ³•åŠ›çº¢å®çŸ³")
+        useItem("æ³•åŠ›é»„æ°´æ™¶")
+        useItem("æ³•åŠ›ç¿¡ç¿ ")
         sleep(100)
-        castSpellA("»½ĞÑ")
+        castSpellA("å”¤é†’")
     end
-    ID1,ID2 = getClosetTargetIDFilterName("±³ÅÑÕßÃÅÅ¬",3,8)
+    --è·å¾—boss ID
+    ID1,ID2 = getClosetTargetIDFilterName("èƒŒå›è€…é—¨åŠª",3,8)
     if ID1 ~= 0 and ID1 ~= -1 then
+        --å¦‚æœIDå­˜åœ¨ï¼Œå°±ä»£è¡¨bosså­˜åœ¨
+        --è·å¾—bossçš„æ ‡å¿—ä½2
         local flag2 = getTargetFlag2ByID(ID1,ID2,3)
+        --å¦‚æœç­‰äº0x08ä»£è¡¨bossåœ¨æˆ˜æ–—ç”¨
         if flag2 == 0x08 then
+            --èµ°ä¸‹å°å­ï¼Œå—æ­»
             moveA(82.684,-348.453,3.03567)
         end
     end
 
     while getRoleCurrentMP() ~= -1 and getRoleflag1() == 0x08 do
-        ID1,ID2 = getClosetTargetIDInBattleFilterName("ÅÌÑÀ¼¼Ê¦",3,8)
+        ID1,ID2 = getClosetTargetIDInBattleFilterName("ç›˜ç‰™æŠ€å¸ˆ",3,8)
         distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
         if distance <= 30 and distance > 0 then
             chooseTarget(ID1,ID2)
-            castSpellA("·¨Êõ·´ÖÆ")
+            castSpellA("æ³•æœ¯ååˆ¶")
         end
         hp = getRoleCurrentHP()
         if hp <= 14 then
-            useItem("ÌØĞ§ÖÎÁÆÒ©Ë®")
-            castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+            useItem("ç‰¹æ•ˆæ²»ç–—è¯æ°´")
+            castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
         end
         ID1,ID2 = getClosetTargetIDToAPositionInBattle(49.5638, -414.071,3)
         distance =  getTargetAndRoleDistanceByID(ID1,ID2,3)
         x,y,z = getTargetPositionByID(ID1,ID2,3)
-        if distance >= 0 then --¾àÀëÅĞ¶Ï
+        if distance >= 0 then --è·ç¦»åˆ¤æ–­
             distance1 = getDistanceBetween(x,y,-15.7392, -392.649)
             ID1,ID2 = getHighestHPTargetIDInBattle(3)
             targetHP = getTargetHPByID(ID1,ID2,3)
             if targetHP >= 30 then
-                if distance1 <= 4 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 4 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 30 and targetHP >= 20  then
-                if distance1 <= 32 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 32 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 20 and targetHP >= 10 then
-                if distance1 <= 42 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 42 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             elseif targetHP <= 10 and targetHP >= 0 then
-                if distance1 <= 57 then --¼ì²â¹ÖÎïÊÇ·ñµ½Ä¿µÄµØ
+                if distance1 <= 57 then --æ£€æµ‹æ€ªç‰©æ˜¯å¦åˆ°ç›®çš„åœ°
                     return 0
                 end
             end
         end
-        ID1,ID2 = getClosetTargetIDInBattle(3) --ÅĞ¶ÏÊÇ·ñÔÚÌ¨×ÓÉÏĞĞ×ß
+        ID1,ID2 = getClosetTargetIDInBattle(3) --åˆ¤æ–­æ˜¯å¦åœ¨å°å­ä¸Šè¡Œèµ°
         x,y,z = getTargetPositionByID(ID1,ID2,3)
         distance = getDistanceBetween(x,y,43.6467, -344.865)
         distance1 = getDistanceBetween(x,y,55.39, -346.972)
@@ -558,62 +563,62 @@ function checkDistanceBetweenMinion2() --¼ì²â¹ÖÈºÊÇ·ñµ½×ã¹»µÄ¾àÀë2
     end
 end
 
-function shield() --ÊÇ·ñÉÏº®±ù»¤Ìå
-    prints("a:ÊÇ·ñÉÏº®±ù»¤Ìå")
-    local ID1,ID2 = getClosetTargetIDInBattleFilterName("ÅÌÑÀÄ§·¨Ê¦",3,8)
+function shield() --æ˜¯å¦ä¸Šå¯’å†°æŠ¤ä½“
+    prints("a:æ˜¯å¦ä¸Šå¯’å†°æŠ¤ä½“")
+    local ID1,ID2 = getClosetTargetIDInBattleFilterName("ç›˜ç‰™é­”æ³•å¸ˆ",3,8)
     if shieldState == 1 then
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
         --[[
         if IsBuffExist(33944) == 0 then
-            castSpellA("Ä§·¨ÒÖÖÆ(µÈ¼¶ 6)")
+            castSpellA("é­”æ³•æŠ‘åˆ¶(ç­‰çº§ 6)")
         end
         --]]
         return 0 
     end
     if ID1 ~= 0 and ID1 ~= -1 then
         shieldState = 1
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
     end
 end
 
-function silenceTechnician()--´ò¶Ï¼¼Ê¦¶ÁÌõ
-    prints("a:´ò¶Ï¼¼Ê¦¶ÁÌõ")
+function silenceTechnician()--æ‰“æ–­æŠ€å¸ˆè¯»æ¡
+    prints("a:æ‰“æ–­æŠ€å¸ˆè¯»æ¡")
     local ID1,ID2 = getClosetTargetIDInBattle(3)
     local name = getTargetNameByID(ID1,ID2,3)
-    if name == "ÅÌÑÀ¼¼Ê¦" then
+    if name == "ç›˜ç‰™æŠ€å¸ˆ" then
         chooseTarget(ID1,ID2)
-        castSpellA("·¨Êõ·´ÖÆ")
+        castSpellA("æ³•æœ¯ååˆ¶")
     end
 end
 
-function skipStorm(x,y,z) --ÊÇ·ñÌø¹ı·¿¼äÄÚ×ó±ßÒ»²¨
-    prints("a:ÊÇ·ñÌø¹ı·¿¼äÄÚ×ó±ßÒ»²¨")
+function skipStorm(x,y,z) --æ˜¯å¦è·³è¿‡æˆ¿é—´å†…å·¦è¾¹ä¸€æ³¢
+    prints("a:æ˜¯å¦è·³è¿‡æˆ¿é—´å†…å·¦è¾¹ä¸€æ³¢")
     local ID1,ID2 = getClosetTargetIDInBattle(3)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
     if distance < 15 and distance >= 0 then
         return
     else
-        castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+        castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
         sleep(5)
         castSpellPosition(x,y,z)
     end
 end
 
-function isMinionInPosition(x,y,z) --¼ì²â¹ÖÈºÊÇ·ñµ½Ò»¼¶±©·çÑ©Î»ÖÃ
-    prints("a:¼ì²â¹ÖÈºÊÇ·ñµ½Ò»¼¶±©·çÑ©Î»ÖÃ")
+function isMinionInPosition(x,y,z) --æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°ä¸€çº§æš´é£é›ªä½ç½®
+    prints("a:æ£€æµ‹æ€ªç¾¤æ˜¯å¦åˆ°ä¸€çº§æš´é£é›ªä½ç½®")
     local ID1,ID2,distance,coolDown = 0,0,0,0
     local mp,level,spellID,distance1 = 0,0,0,0
-    ID1,ID2 = getClosetTargetIDInBattleFilterName("ÅÌÑÀÄ§·¨Ê¦",3,8)
+    ID1,ID2 = getClosetTargetIDInBattleFilterName("ç›˜ç‰™é­”æ³•å¸ˆ",3,8)
     if ID1 ~= 0 and ID1 ~= -1 then
         shieldState = 1
     end
-    useItem("ÉÏ¹ÅË®¾§·ûÖä")
+    useItem("ä¸Šå¤æ°´æ™¶ç¬¦å’’")
     while getRoleCurrentMP() ~= -1 and getRoleflag1() == 0x08 do
         sleep(5)
 
         ID1,ID2 = getClosetTargetIDToAPositionInBattle(49.5638, -414.071,3)
         if getRoleflag1() == 0x00 or getRoleflag1() == 0x04 then
-            --prints("ÍÑÕ½ÁË")
+            --prints("è„±æˆ˜äº†")
             return 0
         end
         distance = getTargetAndPositionDistanceByID(ID1,ID2,49.5638, -414.071,3)
@@ -628,12 +633,12 @@ function isMinionInPosition(x,y,z) --¼ì²â¹ÖÈºÊÇ·ñµ½Ò»¼¶±©·çÑ©Î»ÖÃ
             level = getRoleLevel()
             if mp >= 69 or coolDown == 1 then
                 if level >= 68 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(x,y,z)           
                 end
             else
-                castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                 sleep(5)
                 castSpellPosition(x,y,z)    
             end
@@ -642,11 +647,11 @@ function isMinionInPosition(x,y,z) --¼ì²â¹ÖÈºÊÇ·ñµ½Ò»¼¶±©·çÑ©Î»ÖÃ
                 spellID = getRoleCurrentSpellID()
                 if spellID ~= 0xCB and spellID ~= 0xCD and i >= 5 and i<= 15 and spellID ~= 0x0a and IsBuffExist(12472) == 0 then
                     if IsBuffExist(12536) == 1 then
-                        castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                        castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                         sleep(5)
                         castSpellPosition(x,y,z)
                    else
-                        castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                        castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                         sleep(5)
                         castSpellPosition(x,y,z)
                    end
@@ -665,8 +670,8 @@ function isMinionInPosition(x,y,z) --¼ì²â¹ÖÈºÊÇ·ñµ½Ò»¼¶±©·çÑ©Î»ÖÃ
     end
 end
 
-function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
-    prints("a:µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©")
+function secondTimeMaxLevelStorm(x,y,z) --ç¬¬äºŒæ¬¡ä¸‹æ»¡çº§æš´é£é›ª
+    prints("a:ç¬¬äºŒæ¬¡ä¸‹æ»¡çº§æš´é£é›ª")
     local spellID,targetHP = 0,0
     --moveB(92.9172,-391.322,3.03429)
     --sleep(100)
@@ -680,8 +685,8 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
     elseif mp <= 10 and mp >= 0 then
         return
     else
-        castSpellB("±ùÀäÑªÂö")
-        castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+        castSpellB("å†°å†·è¡€è„‰")
+        castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
         sleep(5)
         castSpellPosition(x,y,z)
         for i = 1, 20,1 do
@@ -689,11 +694,11 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
             spellID = getRoleCurrentSpellID()
             if spellID ~= 0xCB and spellID ~= 0xCD and i >= 5 and i<= 13 and spellID ~= 0x0a and IsBuffExist(12472) == 0 then
                 if IsBuffExist(12536) == 1 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                else
-                    castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                     sleep(5)
                     castSpellPosition(x,y,z)
                end
@@ -706,13 +711,13 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
             end
         end
         
-        ID1,ID2 = getHighestHPTargetIDInBattle(3) --µÚ¶ş´ÎÏÂÑ©
+        ID1,ID2 = getHighestHPTargetIDInBattle(3) --ç¬¬äºŒæ¬¡ä¸‹é›ª
         mp = getRoleCurrentMP()
         targetHP = getTargetHPByID(ID1,ID2,3)
         if mp >= 20 or IsBuffExist(12536) == 1 then
             if targetHP <= 32 or IsBuffExist(12536) == 1 then
                 if targetHP >= 0 and ID1 ~= 0 and ID1 ~= -1 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(76.651,-417.735,3.03409)
                     for i = 1, 20,1 do
@@ -720,11 +725,11 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
                         spellID = getRoleCurrentSpellID()
                         if spellID ~= 0xCB and spellID ~= 0xCD and i<= 13 and i >= 5 and spellID ~= 0x0a and IsBuffExist(12472) == 0 then
                             if IsBuffExist(12536) == 1 then
-                                castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            else
-                                castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            end
@@ -740,19 +745,19 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
             end
         end
 
-        ID1,ID2 = getHighestHPTargetIDInBattle(3) --µÚÈı´ÎÏÂÑ©
+        ID1,ID2 = getHighestHPTargetIDInBattle(3) --ç¬¬ä¸‰æ¬¡ä¸‹é›ª
         mp = getRoleCurrentMP()
         targetHP = getTargetHPByID(ID1,ID2,3)
         if mp >= 20 or IsBuffExist(12536) == 1 then
             if targetHP <= 28 or IsBuffExist(12536) == 1 then
                 if targetHP >= 0 and ID1 ~= 0 and ID1 ~= -1 then
-                    castSpellA("ÕÙ»½Ë®ÔªËØ")
+                    castSpellA("å¬å”¤æ°´å…ƒç´ ")
                     sleep(600)
-                    castSpellB("±ù¶³Êõ")
+                    castSpellB("å†°å†»æœ¯")
                     sleep(50)
                     castSpellPosition(80.5394,-410.023,3.03428)
                     sleep(5)
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(76.651,-417.735,3.03409)
                     for i = 1, 20,1 do
@@ -760,11 +765,11 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
                         spellID = getRoleCurrentSpellID()
                         if spellID ~= 0xCB and spellID ~= 0xCD and i >= 5 and i<= 13 and spellID ~= 0x0a and IsBuffExist(12472) == 0 then
                             if IsBuffExist(12536) == 1 then
-                                castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            else
-                                castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            end
@@ -781,13 +786,13 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
             end
         end
 
-        ID1,ID2 = getHighestHPTargetIDInBattle(3) --µÚ¶ş´ÎÏÂÑ©
+        ID1,ID2 = getHighestHPTargetIDInBattle(3) --ç¬¬äºŒæ¬¡ä¸‹é›ª
         mp = getRoleCurrentMP()
         targetHP = getTargetHPByID(ID1,ID2,3)
         if mp >= 20 or IsBuffExist(12536) == 1 then
             if targetHP <= 22 or IsBuffExist(12536) == 1 then
                 if targetHP >= 0 and ID1 ~= 0 and ID1 ~= -1 then
-                    castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                    castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                     sleep(5)
                     castSpellPosition(76.651,-417.735,3.03409)
                     for i = 1, 20,1 do
@@ -795,11 +800,11 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
                         spellID = getRoleCurrentSpellID()
                         if spellID ~= 0xCB and spellID ~= 0xCD and i<= 13 and i >= 5 and spellID ~= 0x0a and IsBuffExist(12472) == 0 then
                             if IsBuffExist(12536) == 1 then
-                                castSpellA("±©·çÑ©(µÈ¼¶ 7)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 7)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            else
-                                castSpellA("±©·çÑ©(µÈ¼¶ 1)")
+                                castSpellA("æš´é£é›ª(ç­‰çº§ 1)")
                                 sleep(5)
                                 castSpellPosition(x,y,z)
                            end
@@ -817,17 +822,17 @@ function secondTimeMaxLevelStorm(x,y,z) --µÚ¶ş´ÎÏÂÂú¼¶±©·çÑ©
     end
 end
 
-function removeDebuff() --½â³ı¼õËÙ
-    prints("a:½â³ı¼õËÙ")
+function removeDebuff() --è§£é™¤å‡é€Ÿ
+    prints("a:è§£é™¤å‡é€Ÿ")
     if IsBuffExist(33787) == 1 or IsBuffExist(32173) == 1 or IsBuffExist(15655) == 1 then
-        castSpellA("º®±ùÆÁÕÏ")
-        castSpellA("º®±ùÆÁÕÏ")
+        castSpellA("å¯’å†°å±éšœ")
+        castSpellA("å¯’å†°å±éšœ")
         return 0
     end
 end
 
-function ore()--²É¿ó
-    prints("a:ÍÚ¿ó1")
+function ore()--é‡‡çŸ¿
+    prints("a:æŒ–çŸ¿1")
     local ID1,ID2 = getClosetTargetIDToAPosition(-0.633171, -187.404,6)
     local distance = getTargetAndPositionDistanceByID(ID1,ID2,-0.633171, -187.404,6)
     local bag,slot = getBelongBagAndSlotByID(2901)
@@ -853,7 +858,7 @@ function ore()--²É¿ó
 end
 
 function ore2()
-    prints("a:ÍÚ¿ó2")
+    prints("a:æŒ–çŸ¿2")
     local distance,distance1,ID1,ID2,ID3,ID4 = 0,0,0,0,0,0
     local bag,slot = getBelongBagAndSlotByID(2901)
     if slot ~= 0 and slot ~= -1 then
@@ -883,7 +888,7 @@ function ore2()
                 break
             end
             if ID1 ~= 0 and ID1 ~= -1 and distance <= 3 then
-                ID3,ID4 = getClosetTargetIDToAPositionFilterName("ÅÌÑÀ¼à¹¤",-88.31,-287.80,3,8)
+                ID3,ID4 = getClosetTargetIDToAPositionFilterName("ç›˜ç‰™ç›‘å·¥",-88.31,-287.80,3,8)
                 distance = getTargetAndRoleDistanceByID(ID3,ID4,3)
                 sleep(500)
                 distance1 = getTargetAndRoleDistanceByID(ID3,ID4,3)
@@ -909,9 +914,9 @@ function ore2()
     end  
 end
 
-function treasure1() --¿ª±¦Ïä
-    prints("a:¿ª±¦Ïä")
-    local ID1,ID2 = getClosetTargetIDToAPositionFilterName("¼á¹ÌµÄÄ§Ìú±¦Ïä",133.155, -305.886,6,8)
+function treasure1() --å¼€å®ç®±
+    prints("a:å¼€å®ç®±")
+    local ID1,ID2 = getClosetTargetIDToAPositionFilterName("åšå›ºçš„é­”é“å®ç®±",133.155, -305.886,6,8)
     local distance = getTargetAndPositionDistanceByID(ID1,ID2,133.155, -305.886,6)
     if ID1 ~= 0 and ID1 ~= -1 and distance < 10 then
         moveA(133.155,-305.886,3.03572)
@@ -923,9 +928,9 @@ function treasure1() --¿ª±¦Ïä
     end
 end
 
-function treasure2() --¿ª±¦Ïä2
-    prints("a:¿ª±¦Ïä2")
-    local ID1,ID2 = getClosetTargetIDToAPositionFilterName("¼á¹ÌµÄÄ§Ìú±¦Ïä",134.05, -446.654,6,8)
+function treasure2() --å¼€å®ç®±2
+    prints("a:å¼€å®ç®±2")
+    local ID1,ID2 = getClosetTargetIDToAPositionFilterName("åšå›ºçš„é­”é“å®ç®±",134.05, -446.654,6,8)
     local distance = getTargetAndPositionDistanceByID(ID1,ID2,134.05, -446.654,6)
     if ID1 ~= 0 and ID1 ~= -1 and distance < 10 then
         moveA(134.05,-446.654,3.92642)
@@ -937,22 +942,22 @@ function treasure2() --¿ª±¦Ïä2
     end
 end
 
-function move(x,y,z) --¸ÄĞ´¹ıµÄÒÆ¶¯
-    printf("a:¸ÄĞ´¹ıµÄÒÆ¶¯ %f,%f,%f",x,y,z)
+function move(x,y,z) --æ”¹å†™è¿‡çš„ç§»åŠ¨
+    printf("a:æ”¹å†™è¿‡çš„ç§»åŠ¨ %f,%f,%f",x,y,z)
     local x1,y1,z1 = getRolePosition()
     local n = 0
     while getDistanceBetween(x1,y1,x,y) > 0.8 and getRoleCurrentMP() ~= -1 and getRoleflag1() ~= 0x04 and IsBuffExist(8326) ~= 1 do
         moveB(x,y,z)
         if getRoleCurrentHP() <= 15 and getRoleCurrentHP() >= 1 then
-            useItem("ÌØĞ§ÖÎÁÆÒ©Ë®")
+            useItem("ç‰¹æ•ˆæ²»ç–—è¯æ°´")
         end
         if getRoleCurrentMP() <= 14 and getRoleCurrentHP() >= 1 then
-            useItem("ÌØĞ§·¨Á¦Ò©Ë®")
+            useItem("ç‰¹æ•ˆæ³•åŠ›è¯æ°´")
         end
         sleep(40)
         n = n + 1
         if n >= 750 then
-            prints("a:ÒÆ¶¯³¬Ê±")
+            prints("a:ç§»åŠ¨è¶…æ—¶")
             moveB(x+1,y+1,z)
             sleep(100)
             jumpB()
@@ -964,12 +969,12 @@ function move(x,y,z) --¸ÄĞ´¹ıµÄÒÆ¶¯
     end
 end
 
-function skip() --Ìø¹ıÏÂÌ¨×Ó×ø±ê
-    prints("a:Ìø¹ıÏÂÌ¨×Ó×ø±ê")
-    local ID1,ID2 = getClosetTargetIDFilterName("ÅÌÑÀÎÀÊ¿",3,8)
+function skip() --è·³è¿‡ä¸‹å°å­åæ ‡
+    prints("a:è·³è¿‡ä¸‹å°å­åæ ‡")
+    local ID1,ID2 = getClosetTargetIDFilterName("ç›˜ç‰™å«å£«",3,8)
     local distance = getTargetAndRoleDistanceByID(ID1,ID2,3)
-    castSpellB("º®±ù»¤Ìå(µÈ¼¶ 4)")
-    castSpellB("·¨Á¦»¤¶Ü(µÈ¼¶ 7)")
+    castSpellB("å¯’å†°æŠ¤ä½“(ç­‰çº§ 4)")
+    castSpellB("æ³•åŠ›æŠ¤ç›¾(ç­‰çº§ 7)")
     if distance >= 0 then
         if distance > 4 then
             return 0
@@ -984,13 +989,13 @@ function skip() --Ìø¹ıÏÂÌ¨×Ó×ø±ê
 end
 
 function jump(x,y,z)
-    printf("a:ÌøÔ¾ %f,%f,%f",x,y,z)
+    printf("a:è·³è·ƒ %f,%f,%f",x,y,z)
     local x1,y1,z1 = getRolePosition()
     while getDistanceBetween(x1,y1,x,y) > 0.8 and getRoleCurrentMP() ~= -1 and getRoleflag1() ~= 0x04 do
         moveB(x,y,z)
         jumpB()
         if getRoleCurrentHP() < 15 then
-            useItem("ÌØĞ§ÖÎÁÆÒ©Ë®")
+            useItem("ç‰¹æ•ˆæ²»ç–—è¯æ°´")
         end
         for i = 1, 15, 1 do
             moveB(x,y,z)
@@ -1001,22 +1006,22 @@ function jump(x,y,z)
     end
 end
 
-function pickUp() --Ê°È¡
-    prints("a:Ê°È¡")
-    while getRoleCurrentHP() ~= -1 and getRoleflag1() ~= 0x04 do -- Ñ­»·n´Î£¨mld¿ÉÄÜÓĞºÜ¶à¹Ö£©
+function pickUp() --æ‹¾å–
+    prints("a:æ‹¾å–")
+    while getRoleCurrentHP() ~= -1 and getRoleflag1() ~= 0x04 do -- å¾ªç¯næ¬¡ï¼ˆmldå¯èƒ½æœ‰å¾ˆå¤šæ€ªï¼‰
 
-        local n = getUnusedAllBagSlotNum()--»ñµÃ±³°üÊ£ÓàµÄ¸ñ×ÓÊıÄ¿
-        if(n > 4) then --Èç¹û±³°ü´óÓÚ4¸ñ×Ó¾ÍÊ°È¡
-            local ID1,ID2 = getClosetTargetIDFilterCanBeLoot() --»ñµÃ×î½üµÄ¿ÉÒÔ±»Ê°È¡µÄ¹íÎİ
-            if ID1 ~= 0 and ID1 ~= -1 then --Ö¤Ã÷ËÑË÷µ½ÁË¹ÖÎï
-                local distance = getTargetAndRoleDistanceByID(ID1,ID2,3) --»ñµÃÄ¿±êÓëÍæ¼ÒµÄ¾àÀë
-                if distance < 40 and distance >= 0 then -- Èç¹ûÔÚ8Âë·¶Î§ÄÚ£¬·ÀÖ¹È¥Ê°È¡Ì«Ô¶µÄÄ¿±ê£¬È»ºó±»¿¨×¡
-                    contactTarget(ID1,ID2) --Ê°È¡Ä¿±ê
+        local n = getUnusedAllBagSlotNum()--è·å¾—èƒŒåŒ…å‰©ä½™çš„æ ¼å­æ•°ç›®
+        if(n > 4) then --å¦‚æœèƒŒåŒ…å¤§äº4æ ¼å­å°±æ‹¾å–
+            local ID1,ID2 = getClosetTargetIDFilterCanBeLoot() --è·å¾—æœ€è¿‘çš„å¯ä»¥è¢«æ‹¾å–çš„é¬¼å±‹
+            if ID1 ~= 0 and ID1 ~= -1 then --è¯æ˜æœç´¢åˆ°äº†æ€ªç‰©
+                local distance = getTargetAndRoleDistanceByID(ID1,ID2,3) --è·å¾—ç›®æ ‡ä¸ç©å®¶çš„è·ç¦»
+                if distance < 40 and distance >= 0 then -- å¦‚æœåœ¨8ç èŒƒå›´å†…ï¼Œé˜²æ­¢å»æ‹¾å–å¤ªè¿œçš„ç›®æ ‡ï¼Œç„¶åè¢«å¡ä½
+                    contactTarget(ID1,ID2) --æ‹¾å–ç›®æ ‡
                     sleep(50)
-                    useItem("ÁÑÎÆµÄ°ö¿Ç")
-                    useLua("/click StaticPopup1Button1") --Ê°È¡À¶×°
+                    useItem("è£‚çº¹çš„èšŒå£³")
+                    useLua("/click StaticPopup1Button1") --æ‹¾å–è“è£…
                 end
-            else --´ú±íÃ»ÓĞ¿ÉÒÔÊ°È¡µÄÄ¿±êÁË£¬Ìø³öÑ­»·
+            else --ä»£è¡¨æ²¡æœ‰å¯ä»¥æ‹¾å–çš„ç›®æ ‡äº†ï¼Œè·³å‡ºå¾ªç¯
                 break
             end
         else
@@ -1028,25 +1033,25 @@ function pickUp() --Ê°È¡
     
 end
 
---Ö÷³ÌĞò¿ªÊ¼
---´Ó±¾Íâ¿ªÊ¼
---useLua("/removefriend Î°ÈËµÄÒ»Éú")
---useLua("/unignore Î°ÈËµÄÒ»Éú")
+--ä¸»ç¨‹åºå¼€å§‹
+--ä»æœ¬å¤–å¼€å§‹
+--useLua("/removefriend ä¼Ÿäººçš„ä¸€ç”Ÿ")
+--useLua("/unignore ä¼Ÿäººçš„ä¸€ç”Ÿ")
 
---useLua("/ignore Î°ÈËµÄÒ»Éú")
+--useLua("/ignore ä¼Ÿäººçš„ä¸€ç”Ÿ")
 sleep(2000)
---useLua("/friend Î°ÈËµÄÒ»Éú")
-if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
-    -- ¸±±¾ÄÚË¢¹ÖÁ÷³Ì
-    -- 1.´Ó¸±±¾ÃÅ¿ÚÅÜ½ø¸±±¾(¼ÓÑÓ³ÙµÈ´ı¶ÁÌõ)
-    -- 2.³ÔºÈ-ÉÏbuff-³ÔºÈ
-    -- 3.¿ªÊ¼Õı³£Á÷³Ì-Ë¢ÍêÕû¸ö±¾
-    roleX,roleY,roleZ = getRolePosition() --Èç¹ûÔÚÄ¹µØ
-    mapDistance1 = getDistanceBetween(roleX,roleY,338.382,7624.41)--Èç¹ûÔÚÂ¯Ê¯
-    if mapDistance1 <= 100 and mapDistance1 >= 0 then --Èç¹ûÔÚÂ¯Ê¯ then
-        prints("a:»î×Å´ÓÄ¹µØ¿ªÊ¼")
-        useItem("×ÏÉ«Â½ĞĞÄñ")
-        useItem("ËªÀÇàÆ½ĞÕßµÄºÅ½Ç")    
+--useLua("/friend ä¼Ÿäººçš„ä¸€ç”Ÿ")
+if IsBuffExist(8326) == 0 then -- å¦‚æœèº«ä¸Šæ²¡æœ‰å¸¦ç€çµé­‚çŠ¶æ€çš„Debuff
+    -- å‰¯æœ¬å†…åˆ·æ€ªæµç¨‹
+    -- 1.ä»å‰¯æœ¬é—¨å£è·‘è¿›å‰¯æœ¬(åŠ å»¶è¿Ÿç­‰å¾…è¯»æ¡)
+    -- 2.åƒå–-ä¸Šbuff-åƒå–
+    -- 3.å¼€å§‹æ­£å¸¸æµç¨‹-åˆ·å®Œæ•´ä¸ªæœ¬
+    roleX,roleY,roleZ = getRolePosition() --å¦‚æœåœ¨å¢“åœ°
+    mapDistance1 = getDistanceBetween(roleX,roleY,338.382,7624.41)--å¦‚æœåœ¨ç‚‰çŸ³
+    if mapDistance1 <= 100 and mapDistance1 >= 0 then --å¦‚æœåœ¨ç‚‰çŸ³ then
+        prints("a:æ´»ç€ä»å¢“åœ°å¼€å§‹")
+        useItem("ç´«è‰²é™†è¡Œé¸Ÿ")
+        useItem("éœœç‹¼å—¥å«è€…çš„å·è§’")    
         sleep(3500)
         moveA(338.382,7624.41,22.713)
         moveA(346.334,7640.03,22.9739)
@@ -1062,14 +1067,14 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         moveA(231.894,7926.83,25.0783)
     end
     roleX,roleY,roleZ = getRolePosition()
-    mapDistance1 = getDistanceBetween(roleX,roleY,234.317,7920.04)--Èç¹ûÔÚÂ¯Ê¯
-    if mapDistance1 <= 100 and mapDistance1 >= 0 then --Èç¹ûÔÚÂ¯Ê¯ then
-        prints("a:´ÓÈø²¼À­½ğ¿ªÊ¼")
+    mapDistance1 = getDistanceBetween(roleX,roleY,234.317,7920.04)--å¦‚æœåœ¨ç‚‰çŸ³
+    if mapDistance1 <= 100 and mapDistance1 >= 0 then --å¦‚æœåœ¨ç‚‰çŸ³ then
+        prints("a:ä»è¨å¸ƒæ‹‰é‡‘å¼€å§‹")
         moveA(234.317,7920.04,25.0776)
         moveA(240.032,7906,25.7801)
         moveA(240.032,7906,25.7801)
-        useItem("ËªÀÇàÆ½ĞÕßµÄºÅ½Ç")
-        useItem("×ÏÉ«Â½ĞĞÄñ")
+        useItem("éœœç‹¼å—¥å«è€…çš„å·è§’")
+        useItem("ç´«è‰²é™†è¡Œé¸Ÿ")
         sleep(3500)
         moveA(257.147,7864.96,23.12)
         moveA(277.048,7861.91,24.5074)
@@ -1077,9 +1082,9 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         moveA(321.68,7850.33,22.7926)
         moveA(323.501,7843.37,22.3667)
         moveA(324.735,7841.67,22.1649)
-        ID1,ID2 = getClosetTargetIDFilterName("±»·ıÂ²µÄÙªÈå",3,8)
+        ID1,ID2 = getClosetTargetIDFilterName("è¢«ä¿˜è™çš„ä¾å„’",3,8)
         contactTarget(ID1,ID2)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         useLua("/run RepairAllItems()")
         sleep(11000)
         useLua("/click MerchantFrameCloseButton")
@@ -1097,21 +1102,21 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         moveA(450.072,7375.96,16.3277)
         
         moveA(471.387,7302.45,14.0366)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(488.224,7244.35,16.7861)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(522.165,7055.7,16.8074)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(544.161,6961.94,16.7637)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(550.472,6957.96,9.62258)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(570.18,6939.38,-21.9679)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(581.349,6938.73,-39.9977)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(608.24,6908.64,-47.6687)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(608.09,6908.6,-47.6738)
         moveA(614.375,6890.87,-56.2252)
         sleep(1000)
@@ -1120,18 +1125,18 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         moveA(665.759,6866.15,-78.4772)
         moveA(665.759,6866.15,-72.2003)
         moveA(709.469,6914.38,-67.8285)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(720.006,6950.8,-68.0424)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(717.492,6990.01,-73.0739)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(733.508,7012.31,-72.6895)
     end
 
     roleX,roleY,roleZ = getRolePosition()
-    mapDistance1 = getDistanceBetween(roleX,roleY,743.192,7014.06)--Èç¹ûÔÚÂ¯Ê¯
-    if mapDistance1 <= 100 and mapDistance1 >= 0 then --Èç¹ûÔÚÂ¯Ê¯ then
-         prints("a:´Ó¸±±¾ÃÅ¿Ú¿ªÊ¼")
+    mapDistance1 = getDistanceBetween(roleX,roleY,743.192,7014.06)--å¦‚æœåœ¨ç‚‰çŸ³
+    if mapDistance1 <= 100 and mapDistance1 >= 0 then --å¦‚æœåœ¨ç‚‰çŸ³ then
+         prints("a:ä»å‰¯æœ¬é—¨å£å¼€å§‹")
         moveB(743.192,7014.06,-72.7946)
         waitForLoadingPosition(743.192,7014.06,-72.7946)
 
@@ -1140,181 +1145,181 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
     drink()
     sleep(1000)
 
-    useLua("/party follow2") --ÈÃĞ¡ºÅ³ö±¾
-    castSpellA("±ù¼×Êõ(µÈ¼¶ 5)")
-    castSpellA("°ÂÊõÖÇ»Û(µÈ¼¶ 6)")
-    castSpellA("Ä§·¨ÒÖÖÆ(µÈ¼¶ 6)")
-    --useLua("/5.Ñ°Çó×é¶Ó ³ãÀ¶ÏÉÒ° ¹Ì/¶¨/½ñ/ÍÅ/¹«»á/P1ÎÈ¶¨FARM!»¶Ó­¸÷Â·±¬Õ¨ÖÎÁÆ!Êä³öSS/LR/ÔªËØ/¹¾¹¾!»¶Ó­Ğ¡ÍÅÌå´óÍÅÌå¼ÓÈë×ö´ó×öÇ¿ÔÙ´´»Ô»Í!±¸Õ½P2¹Ì¶¨ÍÅÀ´ÎÈ¶¨Ñ¡ÊÖ")
+    useLua("/party follow2") --è®©å°å·å‡ºæœ¬
+    castSpellA("å†°ç”²æœ¯(ç­‰çº§ 5)")
+    castSpellA("å¥¥æœ¯æ™ºæ…§(ç­‰çº§ 6)")
+    castSpellA("é­”æ³•æŠ‘åˆ¶(ç­‰çº§ 6)")
+    --useLua("/5.å¯»æ±‚ç»„é˜Ÿ ç‚½è“ä»™é‡ å›º/å®š/ä»Š/å›¢/å…¬ä¼š/P1ç¨³å®šFARM!æ¬¢è¿å„è·¯çˆ†ç‚¸æ²»ç–—!è¾“å‡ºSS/LR/å…ƒç´ /å’•å’•!æ¬¢è¿å°å›¢ä½“å¤§å›¢ä½“åŠ å…¥åšå¤§åšå¼ºå†åˆ›è¾‰ç…Œ!å¤‡æˆ˜P2å›ºå®šå›¢æ¥ç¨³å®šé€‰æ‰‹")
 
     drink()
-    --¿ªÊ¼À­¹Ö
-    move(124.939,-116.089,-0.8645)--¹Û²ì¹ÖÎï×ßÎ»
+    --å¼€å§‹æ‹‰æ€ª
+    move(124.939,-116.089,-0.8645)--è§‚å¯Ÿæ€ªç‰©èµ°ä½
     watchLobster()
 
     move(124.939,-116.089,-0.8645)
-    castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+    castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
     move(122.52,-110.033,-0.794826 )
     move(94.2386,-89.2036,-2.71253)
-    move(65.7763,-73.9397,-3.93717)--µÚÒ»´ÎÏÂÑ©
+    move(65.7763,-73.9397,-3.93717)--ç¬¬ä¸€æ¬¡ä¸‹é›ª
     sleep(100)
     stormLobster1()
-    move(63.1481,-71.8084,-3.96471 )--ÉÁÏÖ
-    castSpellA("ÉÁÏÖÊõ")
+    move(63.1481,-71.8084,-3.96471 )--é—ªç°
+    castSpellA("é—ªç°æœ¯")
     move(36.4872, -53.8166, -3.20747 )
-    move(21.9444,-43.8772, -3.90103 )--µÚ¶ş´ÎÏÂÑ©
+    move(21.9444,-43.8772, -3.90103 )--ç¬¬äºŒæ¬¡ä¸‹é›ª
     sleep(100)
     stormLobster2()
 
     move(23.2283,-32.6406,-1.02073 )
-    castSpellA("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
-    move(13.8081,-6.57001,-1.54462)--ÌøÔ¾¾ÍÎªµã
-    prints("ÌøÔ¾Ê÷×´")
-    jumpA(8.13143,-1.20081,-0.887246) --Ìø¹ıÊ÷×´
+    castSpellA("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
+    move(13.8081,-6.57001,-1.54462)--è·³è·ƒå°±ä¸ºç‚¹
+    prints("è·³è·ƒæ ‘çŠ¶")
+    jumpA(8.13143,-1.20081,-0.887246) --è·³è¿‡æ ‘çŠ¶
     move(-0.645283,10.2394,2.96381)
     move(-26.6161,27.4639,2.2147)
-    castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
-    move(-45.59,21.923,-1.10631) --ÓÂÊ¿±ù»·ÅĞ¶Ï
+    castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
+    move(-45.59,21.923,-1.10631) --å‹‡å£«å†°ç¯åˆ¤æ–­
     patrolBraveStop()
-    move(-78.1637,6.80497,-4.54459)--ÓÂÊ¿·´ÖÆÅĞ¶Ï
+    move(-78.1637,6.80497,-4.54459)--å‹‡å£«ååˆ¶åˆ¤æ–­
     patrolBraveSlience()
-    move(-91.819,-5.91063,-8.01405)--ÓÂÊ¿±ù»·ÅĞ¶Ï
+    move(-91.819,-5.91063,-8.01405)--å‹‡å£«å†°ç¯åˆ¤æ–­
     patrolBraveStop()
-    move(-105.891,-15.4141,-7.78536)--ÓÂÊ¿±ù»·ÅĞ¶Ï
+    move(-105.891,-15.4141,-7.78536)--å‹‡å£«å†°ç¯åˆ¤æ–­
     patrolBraveStop()
-    move(-108.334, -28.7902, -4.02367)--ÓÂÊ¿±ù»·ÅĞ¶Ï
+    move(-108.334, -28.7902, -4.02367)--å‹‡å£«å†°ç¯åˆ¤æ–­
     patrolBraveStop()
        
-    move(-106.595,-34.6006,-3.58998)--µÚÒ»´ÎÑ²Âß¹Ö±ù»·
+    move(-106.595,-34.6006,-3.58998)--ç¬¬ä¸€æ¬¡å·¡é€»æ€ªå†°ç¯
     patrolBraveStop()
-    move(-105.378,-42.5621,-3.27367)--ÉÁÏÖ
-    castSpellA("ÉÁÏÖÊõ")
-    move(-102.409,-65.0945,-2.90705 )--ÏÂÑ©
+    move(-105.378,-42.5621,-3.27367)--é—ªç°
+    castSpellA("é—ªç°æœ¯")
+    move(-102.409,-65.0945,-2.90705 )--ä¸‹é›ª
     sleep(100)
     firstLevelStormGathered(-104.997,-44.8355,-3.19386)
-    move(-100.835,-81.7564,-3.71117 )--¶Ü
-    castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+    move(-100.835,-81.7564,-3.71117 )--ç›¾
+    castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
     move(-98.6018,-125.2,-125.2)
-    move(-84.7412,-124.506,-1.53335)--×ª½»
+    move(-84.7412,-124.506,-1.53335)--è½¬äº¤
     move(-80.7025,-130.196,-1.5812)
     move(-64.5776,-132.752,-1.58873)
     move(-51.9185,-144.911,-1.57472)
-    move(-40.774,-161.321,-1.57441) --½ø±¾
-    move(-25.7016,-189.866,-2.3059)--ÉÁÏÖ
-    castSpellA("ÉÁÏÖÊõ")
+    move(-40.774,-161.321,-1.57441) --è¿›æœ¬
+    move(-25.7016,-189.866,-2.3059)--é—ªç°
+    castSpellA("é—ªç°æœ¯")
 
-    move(-14.2572,-217.355,-1.58922)--±ù»·
+    move(-14.2572,-217.355,-1.58922)--å†°ç¯
     move(-12.3031,-235.201,-1.60556)
-    castSpellA("·¨Á¦»¤¶Ü(µÈ¼¶ 7)")
-    move(-8.54631,-274.631,-0.534612)--Ñ¡ÖĞÄ¿±ê·´ÖÆ
-    silence("´óĞÍÄàÕÓÁúÏºÈË",5.4219, -257.777)
+    castSpellA("æ³•åŠ›æŠ¤ç›¾(ç­‰çº§ 7)")
+    move(-8.54631,-274.631,-0.534612)--é€‰ä¸­ç›®æ ‡ååˆ¶
+    silence("å¤§å‹æ³¥æ²¼é¾™è™¾äºº",5.4219, -257.777)
     move(-9.11416,-285.24,-1.08062)
-    castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+    castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
     move(-6.72458,-296.899,3.02885)
-    useItem("·¨Á¦»ÆË®¾§")
-    move(-3.74734,-301.4,3.03803)--±ù»·
-    castSpellA("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
-    move(9.16583,-305.124,3.03621)--ÉÁÏÖ
-    castSpellA("ÉÁÏÖÊõ")
-    move(30.3688,-312.673,3.03559)--ÏÂÑ©1
+    useItem("æ³•åŠ›é»„æ°´æ™¶")
+    move(-3.74734,-301.4,3.03803)--å†°ç¯
+    castSpellA("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
+    move(9.16583,-305.124,3.03621)--é—ªç°
+    castSpellA("é—ªç°æœ¯")
+    move(30.3688,-312.673,3.03559)--ä¸‹é›ª1
     sleep(100)
     firstLevelStormGathered1(6.67683,-306.907,3.03559)
-    move(36.6403,-313.956,3.03727)--ÏÂÑ©2
+    move(36.6403,-313.956,3.03727)--ä¸‹é›ª2
     sleep(100)
  
     firstLevelStormGathered(14.3523,-309.649,3.03683)
-    move(42.5877,-315.003,3.03932)--ÏÂÑ©
+    move(42.5877,-315.003,3.03932)--ä¸‹é›ª
     sleep(100)
     firstLevelStormGathered(23.3329,-312.295,3.03683)
-    move(44.1911,-315.269,3.03945)--Ë®ÔªËØ
+    move(44.1911,-315.269,3.03945)--æ°´å…ƒç´ 
     summonStopMinion1(23.3329,-312.295,3.03683)
-    move(50.7804,-317.205,3.03951)--Ë®ÔªËØ²¢ÉÁÏÖ
+    move(50.7804,-317.205,3.03951)--æ°´å…ƒç´ å¹¶é—ªç°
     summonStopMinion2()
-    move(89.9651,-323.008,3.03548)--ÏÂÑ©À­×ó±ß¹Ö
+    move(89.9651,-323.008,3.03548)--ä¸‹é›ªæ‹‰å·¦è¾¹æ€ª
     sleep(100)
     skipStorm(118.274,-304.224,3.03571)
     sleep(1400)
     move(75.408,-338.806,3.03572)
-    castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
-    move(73.3535,-337.869,3.03572)--ÌøÇ°ÕÒºÃÎ»ÖÃ
-    jump(72.3069,-337.145,6.05351) --ÌøÉÏÈ¥
-    move(72.1468,-337.443,6.07123 )--ÏòÓÒ±ßÅÜÒ»µã
-    attackTechnicianNotUnderBridge()--À­·ÇÇÅÏÂÑ²ÂßÅÌÑÀ¼¼Ê¦
+    castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
+    move(73.3535,-337.869,3.03572)--è·³å‰æ‰¾å¥½ä½ç½®
+    jump(72.3069,-337.145,6.05351) --è·³ä¸Šå»
+    move(72.1468,-337.443,6.07123 )--å‘å³è¾¹è·‘ä¸€ç‚¹
+    attackTechnicianNotUnderBridge()--æ‹‰éæ¡¥ä¸‹å·¡é€»ç›˜ç‰™æŠ€å¸ˆ
     useLua("/run PetDismiss()")
-    move(71.3389,-338.800,6.07123)--±ùÏä
+    move(71.3389,-338.800,6.07123)--å†°ç®±
     if getRoleflag1() == 0x08 then
         iceBlock()
         sleep(12000)
-        attackTechnician()--À­ÅÌÑÀ¼¼Ê¦
+        attackTechnician()--æ‹‰ç›˜ç‰™æŠ€å¸ˆ
         jumpB()
-        skip() --Èç¹û±»´Ì£¬ÌøÏÂÀ´ÔÙ»ØÈ¥
+        skip() --å¦‚æœè¢«åˆºï¼Œè·³ä¸‹æ¥å†å›å»
         sleep(4000)
-        moveB(71.3389,-338.800,6.07123)--ÅĞ¶Ï¹ÖÎïÎ»ÖÃ
+        moveB(71.3389,-338.800,6.07123)--åˆ¤æ–­æ€ªç‰©ä½ç½®
         sleep(400)
         checkDistanceBetweenMinion1()
-        move(81.3059,-353.019,3.03577)--´ò¶Ï¼¼Ê¦¶ÁÌõ
+        move(81.3059,-353.019,3.03577)--æ‰“æ–­æŠ€å¸ˆè¯»æ¡
         silenceTechnician()
 
-        move(92.6425,-371.707,3.03568)--´ÓÌ¨×ÓÉÏÏÂÀ´ÅÜµ½ÖĞ¼ä
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
-        move(88.8848,-392.935,3.03572)--ÏÂÑ©Ò»¼¶
+        move(92.6425,-371.707,3.03568)--ä»å°å­ä¸Šä¸‹æ¥è·‘åˆ°ä¸­é—´
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
+        move(88.8848,-392.935,3.03572)--ä¸‹é›ªä¸€çº§
         sleep(100)
         isMinionInPosition(67.0139,-413.785,3.03564)
         --sleep(7000)
-        move(93.6898,-388.816,3.03572)--ÏÂÑ©Âú¼¶
+        move(93.6898,-388.816,3.03572)--ä¸‹é›ªæ»¡çº§
         sleep(100)
         secondTimeMaxLevelStorm(74.0525,-418.013,3.03562)
-        move(92.3513,-383.009,3.03567)--ÉÁÏÖ
-        castSpellA("ÉÁÏÖÊõ")
-        move(76.6604,-340.2,3.03572)--ÌøÇ°ÕÒºÃÎ»ÖÃ
-        castSpellB("·¨Ê¦»¤¼×(µÈ¼¶ 4)")
+        move(92.3513,-383.009,3.03567)--é—ªç°
+        castSpellA("é—ªç°æœ¯")
+        move(76.6604,-340.2,3.03572)--è·³å‰æ‰¾å¥½ä½ç½®
+        castSpellB("æ³•å¸ˆæŠ¤ç”²(ç­‰çº§ 4)")
         move(73.0281,-338.579,3.03572)
-        jump(71.868,-338.043,6.07048)-- --ÌøÉÏÈ¥
+        jump(71.868,-338.043,6.07048)-- --è·³ä¸Šå»
         move(71.7322,-338.334,6.07123)
         move(71.7322,-338.334,6.07123)
-        moveB(72.1468,-337.443,6.07123)--µÈ´ı¹ÖÎïµ½Î»
+        moveB(72.1468,-337.443,6.07123)--ç­‰å¾…æ€ªç‰©åˆ°ä½
         sleep(400)
         checkDistanceBetweenMinion1()
-        moveA(81.3059,-353.019,3.03577)--´ò¶Ï¼¼Ê¦¶ÁÌõ
+        moveA(81.3059,-353.019,3.03577)--æ‰“æ–­æŠ€å¸ˆè¯»æ¡
         silenceTechnician()
         moveA(89.8669,-368.355,3.03565 )
-        castSpellA("ÉÁÏÖÊõ")
-        moveA(117.651,-418.639,3.03501)--ÏÂÑ©
+        castSpellA("é—ªç°æœ¯")
+        moveA(117.651,-418.639,3.03501)--ä¸‹é›ª
         sleep(100)
 
-        castSpellB("±©·çÑ©(µÈ¼¶ 1)")
+        castSpellB("æš´é£é›ª(ç­‰çº§ 1)")
         sleep(5)
         castSpellPosition(127.208,-448.286,3.03409)
         sleep(1200)
         moveA(109.518,-400.424,3.03563)
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
-        moveA(88.1915,-360.504,3.03563)--ÉÁÏÖ
-        castSpellA("ÉÁÏÖÊõ")
-        moveA(76.6604,-340.2,3.03572)--ÌøÇ°ÕÒºÃÎ»ÖÃ
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
+        moveA(88.1915,-360.504,3.03563)--é—ªç°
+        castSpellA("é—ªç°æœ¯")
+        moveA(76.6604,-340.2,3.03572)--è·³å‰æ‰¾å¥½ä½ç½®
         moveA(73.0281,-338.579,3.03572)
-        jump(71.868,-338.043,6.07048)--ÌøÔ¾µã
+        jump(71.868,-338.043,6.07048)--è·³è·ƒç‚¹
         move(71.7322,-338.334,6.07123)
-        moveB(72.1468,-337.443,6.07123 ) --ÅĞ¶ÏÎ»ÖÃ
+        moveB(72.1468,-337.443,6.07123 ) --åˆ¤æ–­ä½ç½®
         sleep(400)
         checkDistanceBetweenMinion1()
     end           
     for i = 1, 50, 1 do
         flag1 = getRoleflag1()
-        if  flag1 == 0x08 then --ÔÚÕ½¶·ÖĞ¾ÍÑ­»·Õ½¶·
+        if  flag1 == 0x08 then --åœ¨æˆ˜æ–—ä¸­å°±å¾ªç¯æˆ˜æ–—
             
-            move(81.3059,-353.019,3.03577)--´ò¶Ï¼¼Ê¦¶ÁÌõ
+            move(81.3059,-353.019,3.03577)--æ‰“æ–­æŠ€å¸ˆè¯»æ¡
             silenceTechnician()
-            move(92.6425,-371.707,3.03568)--´ÓÌ¨×ÓÉÏÏÂÀ´ÅÜµ½ÖĞ¼ä
+            move(92.6425,-371.707,3.03568)--ä»å°å­ä¸Šä¸‹æ¥è·‘åˆ°ä¸­é—´
             shield()
-            move(88.8848,-392.935,3.03572)--ÏÂÑ©Ò»¼¶
+            move(88.8848,-392.935,3.03572)--ä¸‹é›ªä¸€çº§
             sleep(100)
-            useLua("/party follow1") --ÈÃĞ¡ºÅ½ø±¾
+            useLua("/party follow1") --è®©å°å·è¿›æœ¬
             isMinionInPosition(67.0139,-413.785,3.03564)
             --sleep(7000)
             flag1 = getRoleflag1()
             if flag1 == 0x00 then
                 break
             end
-            move(92.9172,-391.322,3.03429)--ÏÂÑ©Âú¼¶
+            move(92.9172,-391.322,3.03429)--ä¸‹é›ªæ»¡çº§
             sleep(100)
             secondTimeMaxLevelStorm(74.0525,-418.013,3.03562)
             flag1 = getRoleflag1()
@@ -1322,22 +1327,22 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
                 break
             end
             
-            move(92.3513,-383.009,3.03567)--ÉÁÏÖ
-            castSpellA("ÉÁÏÖÊõ")
-            moveB(76.6604,-340.2,3.03572)--ÌøÇ°ÕÒºÃÎ»ÖÃ
+            move(92.3513,-383.009,3.03567)--é—ªç°
+            castSpellA("é—ªç°æœ¯")
+            moveB(76.6604,-340.2,3.03572)--è·³å‰æ‰¾å¥½ä½ç½®
             --removeDebuff()
-            move(76.6604,-340.2,3.03572)--ÌøÇ°ÕÒºÃÎ»ÖÃ
+            move(76.6604,-340.2,3.03572)--è·³å‰æ‰¾å¥½ä½ç½®
             move(73.0281,-338.579,3.03572)
-            jump(71.868,-338.043,6.07048)-- --ÌøÉÏÈ¥
+            jump(71.868,-338.043,6.07048)-- --è·³ä¸Šå»
             move(71.7322,-338.334,6.07123)
             sleep(100)
-            moveB(72.0574,-336.379,6.11707)--µÈ´ı¹ÖÎïµ½Î»
+            moveB(72.0574,-336.379,6.11707)--ç­‰å¾…æ€ªç‰©åˆ°ä½
             sleep(800)
             jumpB()
             sleep(1000)
             checkDistanceBetweenMinion1()
-            useLua("/party follow3") --ÈÃĞ¡ºÅ½ø±¾
-        elseif flag1 == 0 or flag1 == 0x04 then --ÍÑÕ½ÁË¾ÍÌø³ö
+            useLua("/party follow3") --è®©å°å·è¿›æœ¬
+        elseif flag1 == 0 or flag1 == 0x04 then --è„±æˆ˜äº†å°±è·³å‡º
             break
         end
     end
@@ -1351,8 +1356,8 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
 
 
 
-        -- 4. Ê°È¡
-        useLua("/party follow2") --ÈÃĞ¡ºÅ³ö±¾
+        -- 4. æ‹¾å–
+        useLua("/party follow2") --è®©å°å·å‡ºæœ¬
         moveA(92.6425,-371.707,3.03568)
         moveA(77.8577,-417.692,3.03567)
         pickUp()
@@ -1360,45 +1365,45 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         treasure2()
         moveA(99.6179,-384.6,3.03567)
         moveA(92.966,-353.43,3.03567)
-        -- 5. ³ö±¾Á÷³Ì(¼ÓÑÓ³ÙµÈ´ı¶ÁÌõ)
-        -- 6. ÖØÖÃ¸±±¾
-        -- 9. ÕâÑù¹¹³ÉÒ»¸öÑ­»·
+        -- 5. å‡ºæœ¬æµç¨‹(åŠ å»¶è¿Ÿç­‰å¾…è¯»æ¡)
+        -- 6. é‡ç½®å‰¯æœ¬
+        -- 9. è¿™æ ·æ„æˆä¸€ä¸ªå¾ªç¯
         move(90.1411,-346.429,3.03587)
         treasure1()
         move(69.9503,-325.795,3.03587)
         move(61.2938,-323.035,3.03675)
-        castSpellA("ÉÁÏÖÊõ")
-        useLua("/party follow2") --ÈÃĞ¡ºÅ³ö±¾  
+        castSpellA("é—ªç°æœ¯")
+        useLua("/party follow2") --è®©å°å·å‡ºæœ¬  
         move(-4.86042,-298.799,3.09008)
         move(-15.6062,-294.427,2.05401)
         ore2()
         move(-17.175,-264.773,-1.54152)
         move(-19.7396,-238.948,-2.09964)
-        castSpellA("ÉÁÏÖÊõ")
+        castSpellA("é—ªç°æœ¯")
         move(-23.0183,-200.569,-1.8485)
         ore()
 
-        unusedBag = getUnusedAllBagSlotNum()--»ñµÃ±³°üÊ£ÓàµÄ¸ñ×ÓÊıÄ¿
+        unusedBag = getUnusedAllBagSlotNum()--è·å¾—èƒŒåŒ…å‰©ä½™çš„æ ¼å­æ•°ç›®
         headDuration = getEquipementDurationBySlotNum(1)
-        if unusedBag > 11 and headDuration >= 20 then --Èç¹û×°±¸²»ºì£¬±³°üÃ»Âú£¬¾Í³ö±¾¼ÌĞø
-        prints("a:³ö±¾¼ÌĞø")
+        if unusedBag > 11 and headDuration >= 20 then --å¦‚æœè£…å¤‡ä¸çº¢ï¼ŒèƒŒåŒ…æ²¡æ»¡ï¼Œå°±å‡ºæœ¬ç»§ç»­
+        prints("a:å‡ºæœ¬ç»§ç»­")
         move(-24.7437,-188.624,-2.29001)
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
         move(-34.3342,-173.13,-1.99026)
         move(-48.1653,-154.69,-1.50054)
         move(-56.5378,-142.109,-1.50338)
         move(-64.6081,-132.587,-1.58817)
         move(-79.2262,-128.238,-1.58817)
-        move(-84.7866,-126.296,-1.4106)--×ª½»
+        move(-84.7866,-126.296,-1.4106)--è½¬äº¤
         move(-84.693,-122.035,-1.6431)
-        move(-100.381,-114.026,-3.1505)--»ğÑæ½Ú»ğ¾æµã
+        move(-100.381,-114.026,-3.1505)--ç«ç„°èŠ‚ç«ç‚¬ç‚¹
         --move(-92.919,-104.732,-4.66746)
         move(-99.8795,-75.2492,-3.17315)
-        castSpellA("ÉÁÏÖÊõ")
+        castSpellA("é—ªç°æœ¯")
         move(-112.841,-27.5825,-5.12581)
         move(-101.386,-1.84192,-8.18317)
         move(-81.3684,5.08273,-5.30549)
-        castSpellA("º®±ù»¤Ìå(µÈ¼¶ 6)")
+        castSpellA("å¯’å†°æŠ¤ä½“(ç­‰çº§ 6)")
         move(-67.7587,16.005,-1.64567)
         move(-51.5569,19.9881,-1.59056)
         move(-35.0662,26.2707,0.81196)
@@ -1408,9 +1413,9 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         move(2.12491,-8.60073,-1.33743)
         move(1.78749,-19.1488,-1.66041)
         move(10.5015,-26.6059,-1.45648)
-        castSpellA("ÉÁÏÖÊõ")
+        castSpellA("é—ªç°æœ¯")
         move(35.2148,-39.596,-1.04909)
-        castSpellA("±ùËªĞÂĞÇ(µÈ¼¶ 1)")
+        castSpellA("å†°éœœæ–°æ˜Ÿ(ç­‰çº§ 1)")
         move(45.9989,-47.0182,-1.37307)
         move(67.9588,-63.0631,-2.12291)
         move(80.6393,-74.993,-3.21888)
@@ -1419,40 +1424,40 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         move(117.858,-107.4,-1.59057)
         move(125.212,-122.238,-0.992671)
         moveB(120.223,-138.426,-0.821922)
-        prints("a:Ë¢Íê½ø±¾")
+        prints("a:åˆ·å®Œè¿›æœ¬")
         waitForLoadingPosition(120.223,-138.426,-0.821922)
-        useLua("/run ResetInstances()") --ÖØÖÃ
+        useLua("/run ResetInstances()") --é‡ç½®
         sleep(1000)
-        prints("a:ÖØÖÃ³É¹¦")
-    elseif unusedBag <= 11 or headDuration < 20 then --Èç¹û×°±¸ºìÁË»òÕß±³°üÂúÁË»Ø³ÇĞŞÀí
-        if unusedBag ~= -1 and headDuration ~= -1 then  --ÔÙ´ÎÑéÖ¤Êı¾İÊÇ·ñ³É¹¦
-        prints("a:»Ø³ÇĞŞÀí¼ÌĞø")
-        -- 5. Â¯Ê¯(¼ÓÑÓ³ÙµÈ´ı¶ÁÌõÓëÀ¶Ìõ¼ÓÔØ20s×óÓÒ)
+        prints("a:é‡ç½®æˆåŠŸ")
+    elseif unusedBag <= 11 or headDuration < 20 then --å¦‚æœè£…å¤‡çº¢äº†æˆ–è€…èƒŒåŒ…æ»¡äº†å›åŸä¿®ç†
+        if unusedBag ~= -1 and headDuration ~= -1 then  --å†æ¬¡éªŒè¯æ•°æ®æ˜¯å¦æˆåŠŸ
+        prints("a:å›åŸä¿®ç†ç»§ç»­")
+        -- 5. ç‚‰çŸ³(åŠ å»¶è¿Ÿç­‰å¾…è¯»æ¡ä¸è“æ¡åŠ è½½20så·¦å³)
         sleep(3000)
-        useItem("Â¯Ê¯")
-        prints("a:Â¯Ê¯")
-        waitForLoading()--µÈ´ı¶ÁÌõ ºÍ ¼ÓÔØÀ¶Ìõ½áÊø
-        prints("a:Â¯Ê¯¶ÁÌõ½áÊø")
-        -- 6. ÖØÖÃ¸±±¾
-        --useLua("/run ResetInstances()") --ÖØÖÃ
+        useItem("ç‚‰çŸ³")
+        prints("a:ç‚‰çŸ³")
+        waitForLoading()--ç­‰å¾…è¯»æ¡ å’Œ åŠ è½½è“æ¡ç»“æŸ
+        prints("a:ç‚‰çŸ³è¯»æ¡ç»“æŸ")
+        -- 6. é‡ç½®å‰¯æœ¬
+        --useLua("/run ResetInstances()") --é‡ç½®
         sleep(1000)   
-        -- 8. Ç°ÍùĞŞÀíÉÌÈËĞŞÀí¹ı³Ì
+        -- 8. å‰å¾€ä¿®ç†å•†äººä¿®ç†è¿‡ç¨‹
         moveA(234.317,7920.04,25.0776)
         moveA(240.032,7906,25.7801)
         moveA(240.032,7906,25.7801)
-        useItem("×ÏÉ«Â½ĞĞÄñ")
-        useItem("ËªÀÇàÆ½ĞÕßµÄºÅ½Ç")    
+        useItem("ç´«è‰²é™†è¡Œé¸Ÿ")
+        useItem("éœœç‹¼å—¥å«è€…çš„å·è§’")    
         sleep(3500)
         moveA(257.147,7864.96,23.12)
         moveA(277.048,7861.91,24.5074)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         moveA(287.956,7851.34,22.3817)
         moveA(321.68,7850.33,22.7926)
         moveA(323.501,7843.37,22.3667)
         moveA(324.735,7841.67,22.1649)
-        ID1,ID2 = getClosetTargetIDFilterName("±»·ıÂ²µÄÙªÈå",3,8)
+        ID1,ID2 = getClosetTargetIDFilterName("è¢«ä¿˜è™çš„ä¾å„’",3,8)
         contactTarget(ID1,ID2)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         useLua("/run RepairAllItems()")
         sleep(11000)
         useLua("/click MerchantFrameCloseButton")
@@ -1471,56 +1476,56 @@ if IsBuffExist(8326) == 0 then -- Èç¹ûÉíÉÏÃ»ÓĞ´ø×ÅÁé»ê×´Ì¬µÄDebuff
         
             
         moveA(471.387,7302.45,14.0366)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(488.224,7244.35,16.7861)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(522.165,7055.7,16.8074)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(544.161,6961.94,16.7637)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(550.472,6957.96,9.62258)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(570.18,6939.38,-21.9679)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(581.349,6938.73,-39.9977)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(608.24,6908.64,-47.6687)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(608.09,6908.6,-47.6738)
         moveA(614.375,6890.87,-56.2252)
         moveA(627.688,6878.41,-71.2822)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         moveA(641.199,6868.34,-80.1888)
         moveA(665.759,6866.15,-78.4772)
         moveA(665.759,6866.15,-72.2003)
         moveA(709.469,6914.38,-67.8285)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(720.006,6950.8,-68.0424)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(717.492,6990.01,-73.0739)
-        castSpellB("ÉÁÏÖÊõ")
+        castSpellB("é—ªç°æœ¯")
         moveA(733.508,7012.31,-72.6895)
-        useLua("/run ResetInstances()") --ÖØÖÃ
+        useLua("/run ResetInstances()") --é‡ç½®
         sleep(1000)
-        prints("a:ÖØÖÃ³É¹¦")
-             -- 7. Ç°ÍùÓÊÏä¼ÄĞÅ¹ı³Ì
-             -- 9. »ØÈ¥¸±±¾ÃÅ¿Ú¹ı³Ì
-             -- 10. ÖØÖÃ¸±±¾
-             -- 11. ÕâÑù¹¹³ÉÒ»¸öÑ­»·
+        prints("a:é‡ç½®æˆåŠŸ")
+             -- 7. å‰å¾€é‚®ç®±å¯„ä¿¡è¿‡ç¨‹
+             -- 9. å›å»å‰¯æœ¬é—¨å£è¿‡ç¨‹
+             -- 10. é‡ç½®å‰¯æœ¬
+             -- 11. è¿™æ ·æ„æˆä¸€ä¸ªå¾ªç¯
         end
     end   
  
-else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
+else -- å¦‚æœèº«ä¸Šå¸¦ç€çµé­‚çŠ¶æ€çš„Debuff(äººç‰©æ­»äº¡)
     roleX,roleY,roleZ = getRolePosition()
-    mapDistance1 = getDistanceBetween(roleX,roleY,248.645,7084.57)--Èç¹ûÔÚÂ¯Ê¯
-    if mapDistance1 <= 40 and mapDistance1 >= 0 then --Èç¹ûÔÚÂ¯Ê¯ then
+    mapDistance1 = getDistanceBetween(roleX,roleY,248.645,7084.57)--å¦‚æœåœ¨ç‚‰çŸ³
+    if mapDistance1 <= 40 and mapDistance1 >= 0 then --å¦‚æœåœ¨ç‚‰çŸ³ then
         moveA(248.339,7084.93,36.4931)
         moveA(250.472,7070.83,36.4321)
         moveA(289.945,7058.72,35.8072)
         moveA(335.873,7041.86,18.2696)
         moveA(392.145,7017.98,18.2689)
         moveA(422.403,7005.16,18.2691)
-        prints("a:¿ªÊ¼×¼±¸Áé»ê×´Ì¬Ç±Ë®")
+        prints("a:å¼€å§‹å‡†å¤‡çµé­‚çŠ¶æ€æ½œæ°´")
         useLua("/run MouselookStart()")
         useLua("/run MoveViewUpStart(1)")
         moveA(429.783,7002.05,18.2691)
@@ -1540,7 +1545,7 @@ else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
         moveA(575.166,6943.31,-36.0657)
         moveA(601.757,6916.48,-46.8129)
         moveA(611.872,6892.78,-53.1743)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         moveA(625.733,6880.79,-70.6405)
         moveA(633.662,6868.47,-77.6463)
         moveA(658.132,6865.01,-83.3429)
@@ -1550,18 +1555,18 @@ else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
         moveA(718.469,6987.9,-73.0748)
         moveA(728.51,7011.19,-72.2453)
         moveB(743.192,7014.06,-72.7946)
-        prints("a:Áé»ê×´Ì¬½ø±¾")
+        prints("a:çµé­‚çŠ¶æ€è¿›æœ¬")
         waitForLoadingPosition(743.192,7014.06,-72.7946)
         moveB(120.223,-138.426,-0.821922)
-        prints("a:Áé»ê×´Ì¬³ö±¾")
+        prints("a:çµé­‚çŠ¶æ€å‡ºæœ¬")
         waitForLoadingPosition(120.223,-138.426,-0.821922)
         sleep(2000)
     end
     roleX,roleY,roleZ = getRolePosition()
-    mapDistance1 = getDistanceBetween(roleX,roleY,335.886,7625.12)--Èç¹ûÔÚÂ¯Ê¯
-    if mapDistance1 <= 40 and mapDistance1 >= 0 then --Èç¹ûÔÚÂ¯Ê¯ then
+    mapDistance1 = getDistanceBetween(roleX,roleY,335.886,7625.12)--å¦‚æœåœ¨ç‚‰çŸ³
+    if mapDistance1 <= 40 and mapDistance1 >= 0 then --å¦‚æœåœ¨ç‚‰çŸ³ then
         sleep(2000)
-        prints("a:ÔÚÄ¹µØ¿ªÊ¼")
+        prints("a:åœ¨å¢“åœ°å¼€å§‹")
         moveA(335.886,7625.12,22.7486)
     -- contactTarget(IDa,IDb)
         moveA(383.34,7567.48,22.0386)
@@ -1575,7 +1580,7 @@ else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
         moveA(514.855,7038.24,18.2695)
         moveA(532.394,6999.08,18.2695)
         moveA(534.142,6995.37,18.2677)
-        prints("a:¿ªÊ¼×¼±¸Áé»ê×´Ì¬Ç±Ë®")
+        prints("a:å¼€å§‹å‡†å¤‡çµé­‚çŠ¶æ€æ½œæ°´")
         useLua("/run MouselookStart()")
         useLua("/run MoveViewUpStart(1)")
         moveA(538.018,6990.32,18.2677)
@@ -1593,7 +1598,7 @@ else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
         moveA(575.166,6943.31,-36.0657)
         moveA(601.757,6916.48,-46.8129)
         moveA(611.872,6892.78,-53.1743)
-        sleep(1000) --µÈ´ı´ò¿ªĞŞÀí½çÃæ
+        sleep(1000) --ç­‰å¾…æ‰“å¼€ä¿®ç†ç•Œé¢
         moveA(625.733,6880.79,-70.6405)
         moveA(633.662,6868.47,-77.6463)
         moveA(658.132,6865.01,-83.3429)
@@ -1603,10 +1608,10 @@ else -- Èç¹ûÉíÉÏ´ø×ÅÁé»ê×´Ì¬µÄDebuff(ÈËÎïËÀÍö)
         moveA(718.469,6987.9,-73.0748)
         moveA(728.51,7011.19,-72.2453)
         moveB(743.192,7014.06,-72.7946)
-        prints("a:Áé»ê×´Ì¬½ø±¾")
+        prints("a:çµé­‚çŠ¶æ€è¿›æœ¬")
         waitForLoadingPosition(743.192,7014.06,-72.7946)
         moveB(120.223,-138.426,-0.821922)
-        prints("a:Áé»ê×´Ì¬³ö±¾")
+        prints("a:çµé­‚çŠ¶æ€å‡ºæœ¬")
         waitForLoadingPosition(120.223,-138.426,-0.821922)
         sleep(2000)
     end
